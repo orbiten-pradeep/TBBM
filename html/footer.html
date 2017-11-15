@@ -1,0 +1,232 @@
+<style type="text/css">
+    .site-footer{
+        color: #31aae2;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    }
+    .site-footer:hover{
+    color: #23527c;
+    }
+</style>
+<footer class="footer">
+
+    <!-- Footer Widget Section -->
+    <div class="footer-widget-section">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-4 footer-block">
+                    <div class="footer-widget widget_text">
+                        <!-- <div class="footer-logo">
+                            <a href="#"><img src="img/the-big-beach-marathon.png" alt=""></a>
+                        </div> -->
+                        <h3>The Big Beach Marathon</h3>
+                        <p>A marathon or even a half marathon requires many things and endurance is key, both physically and mentally. Marathon champions don’t start trying to compete with others – they compete with themselves. Similarly, competing with yourself is the best way to grow and build endurance steadily. Once you are at your peak, you will be able to do a lot better than your old self. We at The Big Beach Marathon challenge you to compete with your biggest competition – you! Are you game?</p>
+
+                    </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4 footer-block">
+                    <div class="footer-widget widget_text">
+                        <h3>We thrive for your fitness</h3>
+                        <p>We make it our business to help you stay fit or get fit. It is a rewarding experience far greater than many as you gradually come to love your body. Fitness is the soul mantra for a better life, and at The Big Beach Marathon, we love creating avenues that work as showcases for your fitness journey! Fitness is a journey, so let us join you on yours. Come running with us!</p>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4 footer-block last">
+                    <div class="footer-widget widget_text">
+                        <h3>Contact Us Today</h3>
+                        <address>
+                          <!--   Call Us +91-8939775770 --><br>
+                            Send an Email on <a href="mailto:#">contact@thebigbeachmarathon.com</a>
+                           <!--  EA Chambers Tower II, No.49/50L, Whites Road<br>
+                            Royapettah, Chennai, Tamil Nadu 600002, India <br> -->
+                        </address>
+
+                        <ul class="list-inline social-links">
+                            <li><a href="https://www.facebook.com/The-Big-Beach-Marathon-387377098329495/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/BigBeachRunners" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/u/0/collection/k8uRJE" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+                        </ul>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+            </div>
+        </div>
+    </div><!-- /.Footer Widget Section -->
+
+    <div class="copyright-section">
+        <div class="container clearfix">
+                <span class="copytext">Copyright &copy; 2017 | </span><span class="site-footer">The Big Beach Marathon</span>
+
+            <ul class="list-inline pull-right">
+                <li><a href="disclaimer.php">Disclaimer</a></li>
+                <li><a href="privacy.php">Privacy Policy</a></li>
+                <!-- <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Blog</a></li> -->
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </div><!-- .container -->
+    </div><!-- .copyright-section -->
+</footer>
+<!-- .footer -->
+</div>
+<!-- .content-wrapper -->
+</div>
+<!-- .offcanvas-pusher -->
+
+<div class="uc-mobile-menu uc-mobile-menu-effect">
+    <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas"
+            id="uc-mobile-menu-close-btn">&times;</button>
+    <div>
+        <div>
+            <ul id="menu">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="benefits.php">Member Benefits</a></li>
+                <li><a href="chapters.php">Chapters/Groups</a></li>
+                <li><a href="sponsors.php">Sponsors</a></li>
+                <li><a href="events.php">Events</a></li>
+ <?php 
+                //session_start();
+                if (!isset($_SESSION['userSession'])) {
+                ?>
+                <li class="dropdown m-menu-fw"><a href="join.php" class="dropdown-toggle">Login/Signup
+               <!--  <span><i class="fa fa-angle-down"></i></span> --></a><?php }?> 
+              <?php 
+                //session_start();
+                if (isset($_SESSION['userSession'])) {
+                ?>
+                <li class="dropdown m-menu-fw"><a href="profile.php" class="dropdown-toggle">My Profile
+               <!--  <span><i class="fa fa-angle-down"></i></span> --></a>
+               <!--  <ul class="dropdown-menu">
+                        <li>
+                            <div class="m-menu-content">
+                                <ul class="col-sm-12">
+                -->                     <!-- <li class=""><a href="profile.php">My Profile</a></li> -->
+                                   <!--  <li><a href="member.php">Become a Member</a></li>
+                                    <li><a href="merchandise.php">Merchandise</a></li>
+                                    <li><a href="offers.php">Brands & Offers</a></li> -->
+                                    <li><a href="class/logout.php?logout">Logout</a>
+                               <!--  </ul>
+                            </div>
+                        </li>
+                </ul> -->
+                <?php } ?>
+                </li> </li>                 
+               <!--  <li><a href="join.php" class="dropdown-toggle">Join</a></li>
+                <li class=""><a href="my-profile.php">My Profile</a></li>
+                <li><a href="member.php">Become a Member</a></li>
+                <li><a href="merchandise.php">Merchandise</a></li>
+                <li><a href="offers.php">Brands & Offers</a></li>
+             --></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- .uc-mobile-menu -->
+
+
+</div>
+<!-- #main-wrapper -->
+
+<!-- Script -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/mobile-menu.js"></script>
+<script src="js/flexSlider/jquery.flexslider-min.js"></script>
+<script src="js/scripts.js"></script>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    toastr.options = {
+  "positionClass": "toast-bottom-center"
+    }
+   
+    <?php if (isset($_SESSION['forgot_info'])) { ?>
+   toastr.info('Plzz Check Ur E-Mail',{timeOut: 5000});
+    <?php unset($_SESSION['forgot_info']); } ?>
+
+<?php if (isset($_SESSION['forgot_error'])) { ?>
+    toastr.error('plz check ur inputs!!!', 'This E-Mail is not Existing!..',{timeOut: 5000});
+    <?php unset($_SESSION['forgot_error']); } ?>
+
+
+<?php if (isset($_SESSION['ticket_success'])) { ?>
+    toastr.success('Ur Tickets has Booked!', 'Thanks for Ur Booking!!!', 'Big Beach Marathon Says',{timeOut: 5000});
+    <?php unset($_SESSION['ticket_success']); } ?>
+
+     <?php if (isset($_SESSION['ticket_error'])) { ?>
+    toastr.error('Sry Ur Comment Not Send', 'Try Again!..',{timeOut: 5000});
+    <?php unset($_SESSION['ticket_error']); } ?>
+
+<?php if (isset($_SESSION['transaction_success'])) { ?>
+    toastr.success('Ur Transaction Has Done Succesfully!', 'Thanks For Ur Intrest!!!', 'Big Beach Marathon Says',{timeOut: 5000});
+   // toastr.error('Signup Error', 'Register Error',{timeOut: 5000});
+    <?php unset($_SESSION['transaction_success']); } ?>
+
+     <?php if (isset($_SESSION['transaction_error'])) { ?>
+    toastr.error('Last Transaction Has Cancelled', 'Try Again!..',{timeOut: 5000});
+    <?php unset($_SESSION['transaction_error']); } ?>
+
+<?php if (isset($_SESSION['contact_success'])) { ?>
+    toastr.success('Ur Comment Send Succesfully!', 'Thanks for Ur Valuable Comment!!!', 'Big Beach Marathon Says',{timeOut: 5000});
+   // toastr.error('Signup Error', 'Register Error',{timeOut: 5000});
+    <?php unset($_SESSION['contact_success']); } ?>
+
+     <?php if (isset($_SESSION['contact_error'])) { ?>
+    toastr.error('Sry Ur Comment Not Send', 'Try Again!..',{timeOut: 5000});
+    <?php unset($_SESSION['contact_error']); } ?>
+
+
+    <?php if (isset($_SESSION['login_error'])) { ?>
+    toastr.error('Email Or Password Entered Is Incorrect!', 'Login Error',{timeOut: 5000});
+    <?php unset($_SESSION['login_error']); } ?>
+
+<?php if (isset($_SESSION['login_success'])) { ?>
+    toastr.success('Login Succesfully!', 'Big Beach Marathon Says',{timeOut: 5000});
+   // toastr.error('Signup Error', 'Register Error',{timeOut: 5000});
+    <?php unset($_SESSION['login_success']); } ?>
+
+<?php if (isset($_SESSION['sign_success'])) { ?>
+    toastr.success('Registration Succesfully!', 'Big Beach Marathon Says',{timeOut: 5000});
+   // toastr.error('Signup Error', 'Register Error',{timeOut: 5000});
+    <?php unset($_SESSION['sign_success']); } ?>
+
+     <?php if (isset($_SESSION['sign_error'])) { ?>
+    toastr.error('Signup Error', 'Register Error',{timeOut: 5000});
+    <?php unset($_SESSION['sign_error']); } ?>
+
+<?php if (isset($_SESSION['signup_error'])) { ?>
+toastr.warning('Signup Error. This E-Mail ID is Already In Use, Try Again!')
+ <?php unset($_SESSION['signup_error']); } ?>
+
+<?php if (isset($_SESSION['password_success'])) { ?>
+    toastr.success('Password is reset successfully!', 'Big Beach Marathon Says',{timeOut: 5000});
+    <?php unset($_SESSION['password_success']); } ?>
+
+<?php if (isset($_SESSION['password_error'])) { ?>
+    toastr.error('Password Not yet Updated', 'Password',{timeOut: 5000});
+    <?php unset($_SESSION['password_error']); } ?>
+
+  });
+  
+</script>
+
+
+
+<div/>
+        <a style="font-size:0; height:0; width:0; opacity:0; position:absolute" target="_blank" href="#">The Big Beach Marathon</a>        
+    </div>
+</body>
+</html>

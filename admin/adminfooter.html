@@ -1,0 +1,37 @@
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2017 &copy; The BigBeachMarathon Admin. </div>
+</div>
+<script src="../js/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    toastr.options = {
+  "positionClass": "toast-bottom-center"
+    }
+   
+<?php if (isset($_SESSION['Adminsign_info'])) { ?>
+   toastr.info('Plzz Wait Till Ur E-Mail Gets Activated ',{timeOut: 5000});
+    <?php unset($_SESSION['Adminsign_info']); } ?>
+
+<?php if (isset($_SESSION['AdminLogin_error'])) { ?>
+    toastr.error('plz check ur inputs!!!', 'Not Yet Activated!..',{timeOut: 5000});
+    <?php unset($_SESSION['AdminLogin_error']); } ?>
+
+    <?php if (isset($_SESSION['Adminsign_success'])) { ?>
+    toastr.success('Ur Registration Has Done Succesfully!', 'Thanks!!!', 'Big Beach Marathon Says',{timeOut: 5000});
+   // toastr.error('Signup Error', 'Register Error',{timeOut: 5000});
+    <?php unset($_SESSION['Adminsign_success']); } ?>
+
+<?php if (isset($_SESSION['Adminsign_error'])) { ?>
+    toastr.error('plz check ur inputs!!!', {timeOut: 5000});
+    <?php unset($_SESSION['Adminsign_error']); } ?>
+
+ });
+  
+</script>
