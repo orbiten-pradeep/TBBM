@@ -18,7 +18,7 @@ if(isset($_POST)) {
 $hashed_password = password_hash($upass, PASSWORD_DEFAULT); // this function works only in PHP 5.5 or latest version
 $check_email = $DBcon->query("SELECT email FROM users WHERE email='$email'");
  $count=$check_email->num_rows;
-if ($count==0 || $count==1) {
+if ($count==0) {
 		$query = "INSERT INTO users(firstname,lastname,email,password,role,active_code,Status,Gender,ContactNumber,groupname,blood,Height,Weight,Membership,userid,profile)VALUES('$firstname','$lastname','$email','$hashed_password','User','','1','','','','','','','','','')";
 		if ($DBcon->query($query)) { 
 			$_SESSION['sign_success'] = "Registration Succesfully!";
