@@ -1,12 +1,12 @@
 <?php
 
-if (isset($_SESSION['Username'])!="") {
- header("Location: ../index.php");
-}
+// if (isset($_SESSION['Username'])!="") {
+//  header("Location: ../index.php");
+// }
 
 require_once 'dbconnect.php';
-//$user = include("getuser.php");
-include("auth.php");
+$user = include("getuser.php");
+//include("auth.php");
 
 if(isset($_POST['memberupdate'])) {
   $Username = strip_tags($_POST['Username']);

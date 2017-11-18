@@ -131,6 +131,61 @@ include("html/header.html")
     </div>
 </section>
 <!-- #x-corp-carousel-->
+<section class="x-features">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>Become A Sponsor</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 img-left">
+                <img class="img-responsive" src="img/sponsor-img.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="promo-block-wrapper clearfix">
+                    <div class="promo-icon">
+                        <i class="fa fa-question-circle "></i>
+
+                    </div>
+                    <div class="promo-content">
+                        <h3>Why Sponsor?</h3>
+
+                        <p>Apart from championing the cause for fitness and spreading awareness of a healthy lifestyle, our sponsor partners will be highly visible in all our marketing and depending on the level of support, very recognizable in various arenas.</p>
+                    </div>
+                </div>
+                <!-- /.promo-block-wrapper -->
+
+                <div class="promo-block-wrapper clearfix">
+                    <div class="promo-icon">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Demographics</h3>
+
+                        <p>The 20-50-year age group show and educated bunch with good incomes. Fitness is their new life mantra and it has helped them immensely.</p>
+                    </div>
+                </div>
+                <!-- /.promo-block-wrapper -->
+
+                <div class="promo-block-wrapper clearfix">
+                    <div class="promo-icon">
+                        <i class="fa fa-life-ring"></i>
+                    </div>
+                    <div class="promo-content last-type">
+                        <h3>Your Support Gives</h3>
+
+                        <p>Your support gives an opportunity to associate your brand with premium events and experience exposure to thousands of participants. Another plus is greater market visibility through multiple media channels, on-site banners and printed materials.</p>
+                    </div>
+                </div>
+                <!-- /.promo-block-wrapper -->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- .x-features -->
 
 <section class="x-services ptb-100 gray-bg tbbm-section">
 
@@ -240,61 +295,6 @@ printed materials.</p>
     <!-- .container -->
 </section>
 <!-- .x-services -->
-<section class="x-features">
-    <section class="section-title">
-        <div class="container text-center">
-            <h2>Become A Sponsor</h2>
-            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
-        </div>
-    </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 img-left">
-                <img class="img-responsive" src="img/sponsor-img.png" alt="">
-            </div>
-            <div class="col-md-6">
-                <div class="promo-block-wrapper clearfix">
-                    <div class="promo-icon">
-                        <i class="fa fa-question-circle "></i>
-
-                    </div>
-                    <div class="promo-content">
-                        <h3>Why Sponsor?</h3>
-
-                        <p>Apart from championing the cause for fitness and spreading awareness of a healthy lifestyle, our sponsor partners will be highly visible in all our marketing and depending on the level of support, very recognizable in various arenas.</p>
-                    </div>
-                </div>
-                <!-- /.promo-block-wrapper -->
-
-                <div class="promo-block-wrapper clearfix">
-                    <div class="promo-icon">
-                        <i class="fa fa-line-chart"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Demographics</h3>
-
-                        <p>The 20-50-year age group show and educated bunch with good incomes. Fitness is their new life mantra and it has helped them immensely.</p>
-                    </div>
-                </div>
-                <!-- /.promo-block-wrapper -->
-
-                <div class="promo-block-wrapper clearfix">
-                    <div class="promo-icon">
-                        <i class="fa fa-life-ring"></i>
-                    </div>
-                    <div class="promo-content last-type">
-                        <h3>Your Support Gives</h3>
-
-                        <p>Your support gives an opportunity to associate your brand with premium events and experience exposure to thousands of participants. Another plus is greater market visibility through multiple media channels, on-site banners and printed materials.</p>
-                    </div>
-                </div>
-                <!-- /.promo-block-wrapper -->
-
-            </div>
-        </div>
-    </div>
-</section>
-<!-- .x-features -->
 
 <!-- <section class="client-logo ptb-100">
     <section class="section-title">

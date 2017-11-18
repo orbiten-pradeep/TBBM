@@ -1,13 +1,15 @@
 <?php
-if(!class_exists('PHPMailer')) {
-    require('phpmailer/class.phpmailer.php');
-	require('phpmailer/class.smtp.php');
-}
+// if(!class_exists('PHPMailer')) {
+//     //require('phpmailer/class.phpmailer.php');
+// 	//require('phpmailer/class.smtp.php');
+// }
 require 'PHPMailer/PHPMailerAutoload.php';
 //require_once("mail_configuration.php");
 
 $mail = new PHPMailer();
-$emailBody = "Your Registration Has Done Successfully!..";
+// for server use
+$emailBody = "Thank you registering with the big beach marathon and check out this space for exciting offers and deals.";
+//$emailBody = "http://localhost/vasan_tbbm/trunk/changepass.php?active_code=$str&email=$email";
 $mail->isSMTP();                                   // Set mailer to use SMTP
 // $mail->Host = 'smtp.gmail.com';                    // Specify main and backup SMTP servers
 // $mail->SMTPAuth = true;                            // Enable SMTP authentication
@@ -26,7 +28,7 @@ $mail->setFrom('contact@thebigbeachmarathon.com', 'The Big Beach Marathon ');
 $mail->addReplyTo('contact@thebigbeachmarathon.com', 'The Big Beach Marathon');
 $mail->ReturnPath='contact@thebigbeachmarathon.com';	
 $mail->AddAddress($email);
-$mail->Subject = "Registration Successfully";		
+$mail->Subject = "Registration Successful | The Big Beach Marathon";		
 $mail->MsgHTML($emailBody);
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');

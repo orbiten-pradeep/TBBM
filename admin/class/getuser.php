@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_SESSION['Username'])!="") {
+if (isset($_SESSION['Username']) !="") {
  header("Location: ../index.php");
 }
 

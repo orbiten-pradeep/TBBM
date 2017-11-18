@@ -40,6 +40,7 @@ require'class/getuser.php';
     color: #ffffff;
     text-decoration: underline;
 }
+
     </style>
 </head>
 <body>
@@ -72,7 +73,7 @@ require'class/getuser.php';
                                                       <?php else: ?>
                                           <img style="width: 7%;" src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
                                           <?php endif; ?>
-                                          <span class="text">Welcome Admin-<?php echo  $_SESSION['loginuser']; ?></span><b class="caret"></b></a>
+                                          <span class="text">Welcome Admin-<?php echo  $_SESSION['loginadmin']; ?></span><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <div class="m-menu-content">
@@ -81,7 +82,7 @@ require'class/getuser.php';
                                      --><li><a href="adminprofile.php">Edit Profile</a></li>
                                     <?php 
                 //session_start();
-                if (isset($_SESSION['userRole']) == 'SuperAdmin') {
+                if ($row['role'] == 'SuperAdmin') {
                 ?>
                 
                                     <li><a href="admindetails.php">Admin Details</a></li>
@@ -96,7 +97,7 @@ require'class/getuser.php';
                         <li>
                             <div class="m-menu-content">
                                 <ul class="col-sm-12">
-                                    <li><a title="" href="../class/logout.php?Adminlogout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+                                    <li><a title="" href="class/logout.php?admin=Admin"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
 
                                     <li><a href="#">Clean Interface</a></li>
                                     </ul>

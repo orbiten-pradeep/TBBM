@@ -15,25 +15,14 @@ require_once 'dbconnect.php';
  
   $query = "UPDATE transactions SET status= '$status', unmappedstatus='$unmappedstatus', field9='$field9', bank_ref_num='$bank_ref_num' WHERE txnid = '$txnid'";
   if($DBcon->query($query)) {
-  		$query = "";
-  		$query = $DBcon->query("SELECT * FROM transactions WHERE txnid = '$txnid'");
- 		$row = $query->fetch_array(MYSQLI_ASSOC);
- 		//print_r($row); exit(0);
- 		$query = "";
- 		$id = $row['ID'];
- 		$query = "UPDATE tickets SET Status= '$status', txnid = '$txnid' WHERE transactions_id ='$id'";
-    // require 'Bibno-gen.php';
-    // if($DBcon->query($query)) {
-    //   $halfmarathon = $DBcon->query("SELECT Status,KM FROM tickets WHERE Status='failure' && KM='10KM' && transactions_id ='$id' ");
-    //   $result=$DBcon->query($halfmarathon);
-    //   $query = "UPDATE tickets SET Bibno = '$app_id' WHERE transactions_id ='$id'";
-    // }
-    // else {
-    //   $fullmarathon = $DBcon->query("SELECT Status,KM FROM tickets WHERE Status='failure' && KM='21.1KM' && transactions_id ='$id' ");
-    //   $result=$DBcon->query($fullmarathon);
-    //   $query = "UPDATE tickets SET Bibno = '$appid' WHERE transactions_id ='$id'";
-  
-    // }
+      $query = "";
+      $query = $DBcon->query("SELECT * FROM transactions WHERE txnid = '$txnid'");
+    $row = $query->fetch_array(MYSQLI_ASSOC);
+    //print_r($row); exit(0);
+    $query = "";
+    $id = $row['ID'];
+    $query = "UPDATE tickets SET Status= '$status', txnid = '$txnid' WHERE transactions_id ='$id'";
+    $DBcon->query($query);
   }
 
   header("Location: ../events.php");

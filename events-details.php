@@ -318,6 +318,7 @@ Author URI: http://bootstrapthemes.co
 .bs-pricing-four .bs-pricing {
     /*text-align: center;*/
     position: relative;
+    font-size: 14px;
 }
 
 .bs-pricing-four .bs-pricing .bs-caption {
@@ -482,9 +483,9 @@ and (max-width: 1920px){
     <section class="section-title">
         <div class="container text-center">
             <!-- <h2>Our Events</h2> -->
-            <h1>The Big Beach Marathon - chennai</h1>
+            <h1>The Big Beach Marathon - Chennai</h1>
             <h3>21 Jan 2018</h3>
-            <h3>Marina Beach, Chennai</h3>
+            <h3>Marina Beach</h3>
             <!-- <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span> -->
         </div>
     </section>
@@ -896,7 +897,7 @@ if(!empty($hash))
                                 <input type="hidden" name="productinfo" value="The Big Beah Marathon" /> 
                                 <input type="hidden" name="service_provider" value="payu_paisa" /> 
                                 <input type="hidden" name="surl" value="http://thebigbeachmarathon.com/class/success.php" /> 
-                                <input type="hidden" name="furl" value="http://thebigbeachmarathon.com/class/success.php" /> 
+                                <input type="hidden" name="furl" value="http://thebigbeachmarathon.com/class/failure.php" /> 
                                 <input type="hidden" name="curl" value="http://thebigbeachmarathon.com/class/success.php" />  
                                 <input type="hidden" name="amount" value="<?php echo (empty($posted['amount'])) ? '0' : $posted['amount'] ?>" />  
                                 <input type="hidden" name="firstname" value="<?php echo (empty($posted['firstname'])) ? '' : $posted['firstname']; ?>"/>  
@@ -1077,45 +1078,21 @@ $("#elcontainer").on('change', '.select-km', function(e){
       if(val != ""){
         if(val == "10KM"){
           var fixedAmt = 650;
-         
- $(document).ready(function() { 
-                $.ajax({
-                    url:"class/Bibno-gen.php",
-                    success:function(result){
-//                         function Bibno() {
-//     var x = document.getElementById("KM[]").value;
-//     document.getElementById("result").innerHTML = "Your Ticket No is: " + x;
-// }
-
-                        // alert(result);
-                    }
-                });             
-            });
-
         }
         else if(val == "21.1KM"){
           var fixedAmt = 850;
-           $(document).ready(function() {
-                $.ajax({
-                    url:"class/Bibnogen.php",
-                    success:function(result){
-                        // alert(result);
-                    }
-                });             
-            });
-
            }
         
         if(parentAmtVal == 0) {
           parentRow.find(".parentRowAmt").val(fixedAmt);
           finalAmt = finalAmt + fixedAmt;
         } else {
-          finalAmt = finalAmt - parentAmtVal;
-          finalAmt = finalAmt + fixedAmt;
-          parentRow.find(".parentRowAmt").val(finalAmt);
+           finalAmt = finalAmt - parentAmtVal;
+           finalAmt = finalAmt + fixedAmt;
+           parentRow.find(".parentRowAmt").val(fixedAmt);
         }
       } else {
-        finalAmt = finalAmt - parentAmtVal;
+         finalAmt = finalAmt - parentAmtVal;
         parentRow.find(".parentRowAmt").val(0);
       }
       

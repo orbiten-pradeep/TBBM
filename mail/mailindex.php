@@ -1,15 +1,15 @@
 <?php
-if(!class_exists('PHPMailer')) {
-    require('phpmailer/class.phpmailer.php');
-	require('phpmailer/class.smtp.php');
-}
+// if(!class_exists('PHPMailer')) {
+//     //require('phpmailer/class.phpmailer.php');
+// 	//require('phpmailer/class.smtp.php');
+// }
 require 'PHPMailer/PHPMailerAutoload.php';
 //require_once("mail_configuration.php");
 
 $mail = new PHPMailer();
 // for server use
 //$emailBody = "http://thebigbeachmarathon.com/changepass.php?active_code=$str&email=$email";
-$emailBody = "http://localhost/vasan_tbbm/trunk/changepass.php?active_code=$str&email=$email";
+$emailBody = "http://localhost/tbbm.git/trunk/changepass.php?active_code=$str&email=$email";
 $mail->isSMTP();                                   // Set mailer to use SMTP
 // $mail->Host = 'smtp.gmail.com';                    // Specify main and backup SMTP servers
 // $mail->SMTPAuth = true;                            // Enable SMTP authentication

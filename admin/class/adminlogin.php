@@ -1,15 +1,17 @@
 <?php
 
+
+
+require 'dbconnect.php';
+// if (isset($_SESSION['adminSession']) !="") {
+
+//  header("Location: ../index.php");
+
+//  exit;
+
+// }
 session_start();
 
-require_once 'dbconnect.php';
-if (isset($_SESSION['userSession'])!="") {
-
- header("Location: ../index.php");
-
- exit;
-
-}
 if (isset($_POST)) {
 	$email = strip_tags($_POST['email']);
 	$password = strip_tags($_POST['password']);
@@ -20,9 +22,9 @@ if (isset($_POST)) {
      $count = $query->num_rows; // if email/password are correct returns must be 1 row
 
  if (password_verify($password, $row['password']) && $count==1 && $row['role'] == 'Admin' && $row['Status'] == '1') {
-
-	  $_SESSION['userSession'] = $row['Username'];
-	  $_SESSION['loginuser'] = $row['Username'];
+      //session_start();
+	  $_SESSION['adminSession'] = $row['Username'];
+	  $_SESSION['loginadmin'] = $row['Username'];
  $_SESSION['email'] = $row['email'];
 	  
 	  unset($_SESSION['AdminLogin_error']);
@@ -31,10 +33,11 @@ if (isset($_POST)) {
 
  }
   elseif (password_verify($password, $row['password']) && $count==1 && $row['role'] == 'SuperAdmin' && $row['Status'] == '1' ) {
+  	//session_start();
  $_SESSION['userRole'] = $row['role'];
-	  $_SESSION['userSession'] = $row['Username'];
+	  $_SESSION['adminSession'] = $row['Username'];
 $_SESSION['email'] = $row['email'];
-	  $_SESSION['loginuser'] = $row['Username'];
+	  $_SESSION['loginadmin'] = $row['Username'];
  	  unset($_SESSION['AdminLogin_error']);
 
 	  header("Location: ../adminhome.php");

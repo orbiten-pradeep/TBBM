@@ -1,7 +1,7 @@
 <?php
-// session_start();
-include("class/auth.php");
-$user = include("class/getuser.php");
+session_start();
+// include("class/auth.php");
+ $user = include("class/getuser.php");
 include("adminheader.html");
 //include_once 'class/auth.php';
 ?>

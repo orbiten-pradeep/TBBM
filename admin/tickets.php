@@ -1,5 +1,8 @@
 <?php
-session_start();
+//session_start();
+
+include("class/auth.php");
+ //include("getuser.php");
 include("adminheader.html");
 ?>
 <html>

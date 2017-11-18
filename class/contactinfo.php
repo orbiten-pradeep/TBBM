@@ -16,7 +16,7 @@ if(isset($_POST)) {
 
  $email = strip_tags($_POST['email']);
 
- $phone = strip_tags($_POST['phone']);
+ $phone = strip_tags($_POST['Phone']);
 
  $message = strip_tags($_POST['message']);
 
@@ -39,11 +39,11 @@ if(isset($_POST)) {
 
  	if ($count==0 || $count!==0) {
 
-		$query = "INSERT INTO contact (username,email, phone,message) VALUES('$username','$email','$phone','$message')";
+		$query = "INSERT INTO contact (username,email, Phone,message) VALUES('$username','$email','$phone','$message')";
 
 		if ($DBcon->query($query)) { 
 
-		  	require_once'../gmail.php';
+		  	require_once'../mail/gmail.php';
 			$_SESSION['contact_success'] = "Ur Comment Send Succesfully!";
 
 			header("location: ../index.php");

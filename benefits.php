@@ -105,7 +105,7 @@ include("html/header.html")
         <div class="container text-center">
             <!-- <h2>Member Benefits</h2>
             <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span> -->
-            <h2 style="font-size: 15px;">As a member of TBBM, you will benefit from year-round connecting with your runners from other cities and receive support, training, insight and best-practice knowledge to help you achieve greater heights as a marathonist.</h2>
+            <h2 style="font-size: 17px;">As a member of TBBM, you will benefit from year-round connecting with your runners from other cities and receive support, training, insight and best-practice knowledge to help you achieve greater heights as a marathonist.</h2>
         </div>
     </section>
 
@@ -135,7 +135,7 @@ include("html/header.html")
             </div>
         </div>
         <div class="container text-center">
-            <h2 style="font-size: 15px;"><a href="join.php">Join Now!</a> to know more about Brands and Exciting Offers for the TBBM Member.</h2>
+            <h2 style="font-size: 20px;"><a href="join.php">Join Now!</a> to know more about Brands and Exciting Offers for the TBBM Member.</h2>
         </div>
         <!-- row -->
        <!--  <div class="row">

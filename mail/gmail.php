@@ -4,12 +4,12 @@ require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 
 $mail->isSMTP();                                   // Set mailer to use SMTP
-$mail->Host = 'mail.thebigbeachmarathon.com';                    // Specify main and backup SMTP servers
-$mail->SMTPAuth = false;                            // Enable SMTP authentication
+$mail->Host = 'sg2plcpnl0183.prod.sin2.secureserver.net';                    // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                            // Enable SMTP authentication
 $mail->Username = 'contact@thebigbeachmarathon.com';          // SMTP username
 $mail->Password = 'Tbbm@1234'; // SMTP password
-$mail->SMTPSecure = 'null';                         // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 25;                                 // TCP port to connect to
+$mail->SMTPSecure = 'ssl';                         // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                 // TCP port to connect to
 
 $mail->setFrom('contact@thebigbeachmarathon.com', 'The Big Beach Marathon');
 $mail->addReplyTo('roslin.albert@gmail.com', 'The Big Beach Marathon');

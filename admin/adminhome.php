@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+// include("class/auth.php");
+ //include("class/getuser.php");
 include("adminheader.html");
 ?>
 <link rel="stylesheet" href="css/bootstrap.min.css" />

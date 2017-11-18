@@ -200,12 +200,17 @@ input[type='number'] {
                 <div class="col-md-12">
                     <h2>View profile</h2>
                     <hr class="">
-                    <div style="margin-bottom: 10px;"><?php if($user['profile'] != ""): ?>
-                                    <img id="profile-img" style="width: 10%;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
+                    <div class="row">
+                    <div class="col-md-2 pull-left" style="margin-bottom: 10px;"><?php if($user['profile'] != ""): ?>
+                                    <img id="profile-img" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
                                     <?php else: ?>
                         <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
                         <?php endif; ?>
-
+                        </div>
+                        <div class="col-md-6" style="margin-top: 50px;">
+                          <h2><?php echo $user['FirstName']; ?> <?php echo $user['LastName']; ?></h2>
+                          <span>(Memebership id: Not Yet a Member)</span>
+                        </div>
                         <!-- <h2>Fullname</h2> -->
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua.</p> -->
@@ -214,7 +219,8 @@ input[type='number'] {
                                 <input type="file" name="profile-pic">
                             </div> -->
                     </div>
-                </div>
+                    </div>
+               
      
         <!-- </div> -->
          <!--  <div class="col-md-9 well" id="rightPanel"> -->
@@ -224,7 +230,7 @@ input[type='number'] {
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <form role="form" action="class/profile.php" method="POST">
                     
-                    <div class="row">
+                    <div class="row" style="display: none;">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                             <label>Firstname</label>
@@ -356,7 +362,7 @@ input[type='number'] {
                     </div>
                 </form>
                 </div>
-                <div class="col-xs-12 col-md-6 verticalLine" style="height: 500px;">
+                <div class="col-xs-12 col-md-6 verticalLine" style="height: 400px;">
                   <p>
 You are encouraged to apply for membership. Our membership thrives on the diversity of backgrounds & locations of our members to create a rich experience for all.</p>
 
@@ -373,35 +379,26 @@ You are encouraged to apply for membership. Our membership thrives on the divers
                 </div>
                 </div>
                 </div>
+
                 <div class="tab-pane fade" id="chngpswd">
-                <form  name="frmReset" id="frmReset" method="post" action="class/reset.php" onSubmit="return validate_password_reset();">
-
- <h2 class="form-signin-heading">Change Password</h2>
-  <div class="success_message"></div>
-  <div id="validation-message">
-    </div>
-
+        <form  name="frmReset" id="frmReset" method="post" action="class/reset.php" onSubmit="return validate_password_reset();">
+           <h2 class="form-signin-heading">Change Password</h2>
+              <div class="success_message">
+              </div>
+              <div id="validation-message">
+              </div>
         <div class="form-group user-name">
-
-   
-    <input name="password" type="password" class="form-control" placeholder="Enter New Passwword.." required>
-
-
-  </div>
-
+          <input name="password" type="password" class="form-control" placeholder="Enter New Passwword.." required>
+        </div>
  <div class="form-group user-name">
-
-   
     <input name="confirm_password" type="password" class="form-control" placeholder="Confirm Ur Password.." required>
-
-
   </div>
-
   <br />
 
         <button class="btn btn-success btn-block" name="resetpassword" id="resetpassword" type="submit">Submit Password</button>
  
       </form>
+            </div>
             </div>
             </div>
             </div>

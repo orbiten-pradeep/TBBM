@@ -126,62 +126,19 @@ input[type='number'] {
 </div> -->
 <!-- #x-corp-carousel-->
 <section class="x-services ptb-100 gray-bg">
-<!-- <div class="container">
-    <div class="row" id="main">
-        <div class="col-md-3 well" id="leftPanel">
-            <div class="row">
-                <div class="col-md-12">
-                    <div>
-<input onClick="return confirm('Are You Sure ?');" type="submit" value="Delete"  name="Submit1" />
-  <form enctype="multipart/form-data" method="post" action="">
-                        <?php if($user['profile'] != ""): ?>
-                                    <img style="width: 50%;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
-                                    <?php else: ?>
-                        <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
-                        <?php endif; ?>
-        <input type="file"  class="field-long" name="image"   />
-    </li>   
-    <li>
-        <input type="submit" value="Submit"  name="Submit" />
-         
-    </li></form>
-<h2>Profile Pic</h2>
-                       <div class="btn-wrapper">
-                            
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 well">
+        <div class="col-md-12">
+          <h2>Edit profile</h2>
+            <hr class="">
+              <div>  <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
+<a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
+                  <h2>Profile Pic</h2>   
+              </div>
+        </div>
         <div class="container">
           <div class="row">
-          <div class="col-md-12 well">
-            <div class="col-md-12">
-                    <h2>Edit profile</h2>
-                    <hr class="">
-               <div>  <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');">
-<a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
-               <!-- <input onClick="return confirm('Are You Sure ?');" type="submit" value="Delete" action="class/profile.php"  name="Submit1" />
- -->                   <!--  <form enctype="multipart/form-data" method="post" action="class/profile.php"> -->
-                                          <!-- <?php if($user['profile'] != ""): ?>
-                                                      <img style="width: 10%;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
-                                                      <?php else: ?>
-                                          <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
-                                          <?php endif; ?>
-                                      <input type="file"  class="field-long" name="image"/>  -->
-                    <!-- <li>
-                      <input type="submit" value="Submit"  name="Submit" />
-                    </li> -->
-                   <!--  </form> -->
-                  <h2>Profile Pic</h2>   
-                </div>
-            </div>
-        
-        <!-- </div> -->
-         <!--  <div class="col-md-9 well" id="rightPanel"> -->
-
-            <div class="container">
-            <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
             <?php 
                 //session_start();
@@ -189,7 +146,7 @@ input[type='number'] {
                 ?>
                 <form role="form" enctype="multipart/form-data" action="class/profile.php" method="POST">
                     <?php if($user['profile'] != ""): ?>
-                                                      <img style="width: 10%;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
+                                                      <img src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
                                                       <?php else: ?>
                                           <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
                                           <?php endif; ?>
@@ -439,7 +396,7 @@ input[type='number'] {
                 </form>
 <?php }?>
                 </div>
-                <div class="col-xs-12 col-md-6 verticalLine" style="height: 500px;">
+                <div class="col-xs-12 col-md-6 verticalLine" style="height: 400px;">
                  <p>
                 You are encouraged to apply for membership. Our membership thrives on the diversity of backgrounds & locations of our members to create a rich experience for all.</p>
 
@@ -451,6 +408,8 @@ input[type='number'] {
                         <div class="col-xs-12 col-md-12"><a href="member.php" class="btn btn-lg btn-primary btn-block">Become a Member</a>
                         </div>
                     </div>
+                </div>
+                </div>
                 </div>
                 </div>
                 </div>
