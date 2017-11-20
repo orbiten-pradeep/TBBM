@@ -1,0 +1,5 @@
+[17-Nov-2017 06:44:39 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
+[17-Nov-2017 06:44:55 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
+[17-Nov-2017 06:46:41 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
+[17-Nov-2017 06:54:56 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
+[17-Nov-2017 06:55:08 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
