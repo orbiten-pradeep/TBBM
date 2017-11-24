@@ -5,7 +5,7 @@ include("html/header.html")
 
 <style type="text/css">
    .tbbm-section{
-        padding-top: 0px !important; 
+        /*padding-top: 0px !important; */
     }
 @media screen and (max-width: 600px){
     .tbbm-section{
@@ -59,8 +59,8 @@ include("html/header.html")
 }
 
 .ptb-100 {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 55px;
+    padding-bottom: 55px;
 }
 .service-icon-style .promo-content {
     padding: 40px;

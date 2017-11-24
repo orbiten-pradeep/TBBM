@@ -25,8 +25,8 @@ include("html/header.html")
 
 .single-page-title {
     background: url(img/chapters-marathon.jpg) no-repeat bottom;
-        background-attachment: scroll;
-        background-size: auto auto;
+    background-attachment: scroll;
+    background-size: auto auto;
     background-size: cover;
     width: 100%;
     background-attachment: scroll;
@@ -50,8 +50,8 @@ include("html/header.html")
     }
 }
 .ptb-100 {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 55px;
+    padding-bottom: 55px;
 }
 
 .chapters-row{

@@ -36,8 +36,8 @@ include("html/header.html")
     }
 }
 .ptb-100 {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 55px;
+    padding-bottom: 55px;
 }
 
 </style>
@@ -135,7 +135,7 @@ include("html/header.html")
             </div>
         </div>
         <div class="container text-center">
-            <h2 style="font-size: 20px;"><a href="join.php">Join Now!</a> to know more about Brands and Exciting Offers for the TBBM Member.</h2>
+            <h2><a href="join.php">Join Now!</a> to know more about Brands and Exciting Offers for the TBBM Member.</h2>
         </div>
         <!-- row -->
        <!--  <div class="row">

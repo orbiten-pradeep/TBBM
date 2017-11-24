@@ -18,7 +18,7 @@ if (isset($_POST)) {
  {
 	  $_SESSION['userSession'] = $row['firstname'];
 	  $_SESSION['loginuser'] = $row['firstname'];
-      $_SESSION['$member'] = $row['Membership'];
+      $_SESSION['member'] = $row['Membership'];
       $_SESSION['email'] = $row['email'];
 	  unset($_SESSION['login_error']);
 	  header("Location: ../profile.php");

@@ -37,6 +37,13 @@ color: #313131 !important;
     line-height: 36px;
     margin-bottom: 5px;
 }
+@media screen and (max-width: 600px){
+  .navbar-default {
+    background: #3CAFC4 !important;
+    padding: 10px 0;
+    border-bottom: none;
+}
+}
 </style>
 
 <section class="x-services ptb-100 gray-bg">
@@ -59,7 +66,8 @@ color: #313131 !important;
           <div class="">
               <div class="row">
                   <div class="col-xs-12 col-sm-6">
-                    <h2>Signup</h2>
+                    <h2 style="font-size: 19px;">Want to join us and get your fitness on track?</h2>
+                    <p style="font-size: 15px;"> Our simple sign up process gets you connected with us in a few easy steps. So, what are you waiting for? Go ahead and  joinus!</p>
                       <div class="well">
                       <form id="loginForm" method="POST" action="class/signup.php">
                              <!--  <?php
@@ -67,8 +75,7 @@ color: #313131 !important;
                                  echo $_SESSION['sign_error'];
                                 }
                               ?> -->
-                               
-                              <p>Want to join us and get your fitness on track? Our simple sign up process gets you connected with us in a few easy steps. So, what are you waiting for? Go ahead and  joinus!</p>
+                                <h2>Signup</h2>
                               <div class="form-group">
                                   <label for="username" class="control-label" style="display: none;">Firstname</label>
                                   <input type="text" class="form-control" id="username" name="firstname" value="" required placeholder="Enter your First Name">
@@ -102,7 +109,8 @@ color: #313131 !important;
                       </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <h2>Login</h2>
+                    <h2 style="font-size: 19px;">Already a member? Have you been out of touch with us for a bit?</h2>
+                    <p style="font-size: 15px;"> Or do you just want to log in on a new device? Either way here’s how you get back in touch with us!</p>
                       <div class="well login-form-padding">
                           <form  method="post" action="class/login.php" id="login-form">
                               <!-- <?php
@@ -110,8 +118,7 @@ color: #313131 !important;
                                  echo $_SESSION['login_error'];
                                 }
                               ?> -->
-                              
-                              <p>Already a member? Have you been out of touch with us for a bit? Or do you just want to log in on a new device? Either way here’s how you get back in touch with us!</p>
+                              <h2>Login</h2>
                               <div class="form-group">
                                   <label for="username" class="control-label" style="display: none;">Email</label>
                                   <input type="text" class="form-control" id="username" name="email" placeholder="Enter your email address" required>

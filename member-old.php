@@ -183,11 +183,11 @@ if(!empty($hash))
       $height = $DBcon->real_escape_string($height);
       $weight = $DBcon->real_escape_string($weight);
 
-      //$oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
+      $oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
 
       //$query = "";
 
-      $query = "INSERT INTO membership(transactions_id,membership_id, first_name, last_name, email, amount, groupname, gender, blood_type, contact_number, DOB, Height, Weight, Status) VALUES ('$trans_id','$member','$firstname','$lastname','$email','$amount','$groupname','$gender','$blood','$contact_number','$dob','$height','$weight','0') ";
+      $query = "INSERT INTO membership(transactions_id,membership_id, first_name, last_name, email, amount, groupname, gender, blood_type, contact_number, DOB, Height, Weight, Status,expire_at) VALUES ('$trans_id','$member','$firstname','$lastname','$email','$amount','$groupname','$gender','$blood','$contact_number','$dob','$height','$weight','0','$oneYearOn') ";
       if($DBcon->query($query))
       {
         $_SESSION['ticket_success'] = "SuccesFull Membership done!!";
@@ -254,7 +254,7 @@ if(!empty($hash))
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="form-group">
            <label>Firstname</label>
-            <input type="text" name="firstname" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" required  value="<?php echo $user['FirstName']; ?>">
+            <input type="text" name="firstname" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" required readonly="true" value="<?php echo $user['FirstName']; ?>">
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">

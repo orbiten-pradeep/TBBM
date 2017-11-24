@@ -88,15 +88,9 @@ if(isset($_POST['memberupdate'])) {
 }
  else
   {
-     $que = "UPDATE users SET firstname ='$firstname', lastname='$lastname', DOB='$DOB', Gender='$Gender', ContactNumber='$ContactNumber', Height='$Height', Weight='$Weight', groupname='$groupname', blood='$blood' WHERE email='$email' ";
-      if ($DBcon->query($que)) { 
-
-    // $msg = 'Image Uploaded Successfully'; 
-    // header("Location: ../profile.php");
-  }
-
-      $msg =  'Please Upload Real Image';
-         header("location:../profile.php");
+      $profilepic = "UPDATE users SET firstname ='$firstname', lastname='$lastname', DOB='$DOB', Gender='$Gender', ContactNumber='$ContactNumber', Height='$Height', Weight='$Weight', groupname='$groupname', blood='$blood' WHERE email='$email' ";
+      $DBcon->query($query);
+      header("location:../profile.php");
   }
 }
 

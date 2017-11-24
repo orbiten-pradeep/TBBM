@@ -1,219 +1,89 @@
-﻿<?php
-session_start();
-include("html/header.html")
+<?php
+// session_start();
+include("class/auth.php");
+$user = include("class/getuser.php");
+include("html/header.html");
+//include_once 'class/auth.php';
 ?>
 <style type="text/css">
-    #welcome {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-.hero {
-    background-size: cover;
-    /*background-image: url('video/Marathon_2.mp4');*/
-}
-.hero {
-    background-size: cover;
-    position: relative;
-    -webkit-box-shadow: inset 0 -3px 6px 0 rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: inset 0 -3px 6px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0 -3px 6px 0 rgba(0, 0, 0, 0.4);
-    padding: 250px 0 200px;
-        padding-top: 250px;
-        padding-bottom: 200px;
-}
-.blacklayer {
-    background: rgba(0, 0, 0, 0.4) url('http://demo.themely.com/parallel/wp-content/themes/parallel-pro/images/bg-strip.png') repeat scroll 0 0;
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-.hero .lead {
-    color: #fff;
-    font-weight: 400;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
-    display: inline-block;
-    width: 100%;
-}
-/*.hero .lead, .hero .title {
-    margin: 0 0 -500px;
+  /*  .navbar-default{
+        background-color: #3CAFC4 !important;
+    }
+    .tbbm-section{
+        padding-top: 200px !important; 
+    }*/
+/*@media screen and (max-width: 600px){
+    .tbbm-section{
+        padding-top: 100px !important;
+    }
 }*/
 
-.hero .lead, .hero .title {
-    margin: 0 0 -300px;
-}
-
-
-
-.lead {
-    font-size: 21px;
-}
-@media screen and (max-width: 600px){
-.hero .lead, .hero .title {
-    margin: 0 0 -350px;
-}
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  and (min-resolution:.001dpcm) {
-    .blacklayer { 
-    background: rgba(0, 0, 0, 0.4) url('http://demo.themely.com/parallel/wp-content/themes/parallel-pro/images/bg-strip.png') repeat scroll 0 0;
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-} 
-
-@media screen and (max-width: 1024px){
-    #welcome {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-}
-
-@media screen and (max-width: 600px){
-.hero .lead, .hero .title {
-    margin: 0 0 -350px;
-}
-}
-
-#welcome {
-    padding-top: 0px;
-    padding-bottom: 175px;
-}
-
-.hero .lead, .hero .title {
-    margin: 0 0 -220px;
-}
-
-@media screen and (min-width: 1280px)
-and (max-width: 1366px){
-    #welcome {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-}
-
-}
-.single-page-title {
-    background: url(img/homepage-banner.jpg) no-repeat bottom;
+/*.single-page-title {
+    background: url(img/MBenefit-Marathon.jpg) no-repeat bottom;
         background-attachment: scroll;
         background-size: auto auto;
     background-size: cover;
     width: 100%;
     background-attachment: scroll;
-    padding: 15% 0 43%;
+    padding: 15% 0 5%;
     position: relative;
-}
-.single-page-title::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    }
-.title-container{
-    top: 75px;
-    position: relative;
-}
-.member-btn{
-    padding: 15px 60px;
-    font-size: 15px;
-}
+}*/
 
-.x-features .promo-content {
-    color: white;
-    overflow: hidden;
-    border-bottom: none !important;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    padding-top: 15px;
+@media (max-width: 600px){
+    .title{
+        font-size: 25px !important;
+        letter-spacing: 5px !important;
+    }
+    .single-page-title {
+    padding: 25% 0 5%;
+    }
 }
 .ptb-100 {
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
-.o2{
-    margin-left: 30px;
-}
-#first-title{
-    color: white;
-    position: relative; 
-    font-size: 35px;
-}
-#second-title{
-    font-size: 30px;
-    display: block;
-    margin-top: 40px;
-}
-.btn-mem{
-    top: 100px;
-}
-@media (max-width: 600px){
-    #first-title{
-    font-size: 22px;
-}
-#second-title {
-    font-size: 28px;
-    margin-top: 15px;
-}
-.btn-mem {
-    top: 20px;
-}
-.member-btn {
-    padding: 15px 60px;
-    font-size: 13px;
-}
-}
+.navbar-default{
+      background-color: #3CAFC4;
+    }
 
+.breadcrumb{
+    background: none !important;
+}
+.ptb-100 {
+    padding-top: 125px;
+    padding-bottom: 70px;
+}
+.breadcrumb > .active > a {
+    color: #777;
+}
+.x-services .thumbnail .caption {
+    /*padding: 10px;*/
+    color: #969595;
+    overflow: hidden;
+}
+.offers-block{
+    margin-top: 50px;
+}
+@media screen and (max-width: 600px){
+  .navbar-default {
+    background: #3CAFC4 !important;
+    padding: 10px 0;
+    border-bottom: none;
+}
+}
 </style>
-<!-- <section id="welcome" class="hero " style="background-position: 0px 0px;">
-<video class="tbbm-bg-video" autoplay="autoplay" loop="loop" muted="muted" preload="auto" style="width:100%; height: 720px; left: 0px; top: -137.5px; display: block;object-fit:cover;"><source src="video/Sequence 01.mp4" type="video/mp4"></video> -->
-<!-- <video class="tbbm-bg-video" autoplay="autoplay" loop="loop" muted="muted" preload="auto" style="width:100%; height: 720px; left: 0px; top: -137.5px; display: block;object-fit:cover;"><source src="video/Marathon_2.mp4" type="video/mp4"></video> -->
-<!-- <div class="blacklayer" ></div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-
-            <div class="title text-center">
-            </div>
-
-            <div class="lead text-center">
-                <h1 style="color: white;">Nothing pushes you more than running. Just run.</h1>
-            </div>
-            <center> 
-                <div class="col-md-12  text-center" >
-                <a href="join.php" class="btn btn-lg btn-primary" style="padding: 15px 50px;">Become a Member</a>
-                </div>
-            </center>
-        </div>
+<!-- <section class="single-page-title">
+    <div class="container text-center">
+        <h2 class="title">Member Benefits</h2>
     </div>
-</div>
 </section> -->
-<section class="single-page-title">
-    <div class="container text-center title-container">
-        <h1 id="first-title">Running is not about being better than someone else.<span id="second-title">It’s about being better than you used to be.</span></h1>
-        <center> 
-                <div class="col-md-12 text-center btn-mem">
-                <a href="#" class="btn btn-lg btn-primary member-btn" style="cursor: not-allowed;" disabled data-toggle="tooltip" title="Check out this link shortly for exciting offers and merchandise!">Become a Member</a>
-                </div>
-            </center>
-    </div>
-</section>
+<!-- <video class="tatsu-bg-video" autoplay="autoplay" loop="loop" muted="muted" preload="auto" style="width:100%; height: 720px; left: 0px; top: -137.5px; display: block;object-fit:cover;"><source src="video/Marathon.mp4" type="video/mp4"></video> -->
 <!-- <div id="x-corp-carousel" class="carousel slide hero-slide hidden-xs" data-ride="carousel">
 
     <ol class="carousel-indicators">
         <li data-target="#x-corp-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#x-corp-carousel" data-slide-to="1"></li>
-        <li data-target="#x-corp-carousel" data-slide-to="2"></5>
+        <li data-target="#x-corp-carousel" data-slide-to="2"></li>
     </ol>
 
     <div class="carousel-inner" role="listbox">
@@ -262,38 +132,53 @@ and (max-width: 1366px){
 
 <section class="x-services ptb-100 gray-bg">
 
-    <section class="section-title">
-        <div class="container text-center">
-            <h2>Member Benefits</h2>
-            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+    <div class="row breadcrumbs margin-bottom-40" style="background-color: #f2f2f2;">
+            <div class="container">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <h1><strong></strong></h1>
+                </div><br>
+                <div class="col-md-12 col-sm-12">
+                <ul class="text-center breadcrumb">
+                  <li><a href="profile.php">My Profile</a></li>
+                  <li class="active"><a href="member-benefits.php">Member Benefits</a></li>
+                  <li><a href="member-offers.php">Offers</a></li>
+                </ul>
+                </div>
+            </div><br>
         </div>
-    </section>
 
-    <div class="container">
+    <div class="container offers-block">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="thumbnail clearfix">
-                    <a href="#"><img class="img-responsive" src="img/Gifts.jpg" alt="Image"></a>
+                    <a href="#"><img class="img-responsive" src="img/raymond-member-benefits.png" alt="Image"></a>
 
                     <div class="caption">
-                        <h3><a href="#">Gifts & Apparels</a></h3>
-
-                        <p>Welcome to the family! A wide range of The Big Beach Marathon gift and accessories for you and your loved ones.</p>
+                        <h4>Raymond</h4>
+                        <h3>What you get?</h3>
+                        <p>Exclusive offers and discounts in raymond products and merchandise.*</p>
+                        <p style="font-size: 10px;">Terms & Conditions</p>
+                        <p style="font-size: 10px;">*Offer Valid in selected branches only</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="thumbnail clearfix">
-                    <a href="#"><img class="img-responsive" src="img/Discounts.png" alt="Image"></a>
+                    <a href="#"><img class="img-responsive" src="img/o2-member-benefits.png" alt="Image"></a>
 
                     <div class="caption">
-                        <h3><a href="#">Offers & Discounts</a></h3>
-
-                        <p>Once you join with us, you receive a 15% discount on registration fees for any The Big Beach Marathon across India.</p>
+                        <h4>O2 Health Studio</h4>
+                        <h3>What you get?</h3>
+                        <p>Exclusive offers on yearly packages.*</p>
+                        <p style="font-size: 10px;">Terms & Conditions</p>
+                        <p style="font-size: 10px;">*Offer Valid in selected branches only</p>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <div class="container text-center">
+            <h2 style="font-size: 20px;"><a href="join.php">Join Now!</a> to know more about Brands and Exciting Offers for the TBBM Member.</h2>
+        </div> -->
         <!-- row -->
        <!--  <div class="row">
             <div class="col-md-6">
@@ -327,71 +212,62 @@ and (max-width: 1366px){
 </section>
 <!-- .x-services -->
 
-<section class="x-features">
+<!-- <section class="x-features">
     <section class="section-title">
         <div class="container text-center">
-            <h2>About Us</h2>
+            <h2>Our Capabilities</h2>
             <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
         </div>
     </section>
     <div class="container">
         <div class="row">
-            <div class="col-md-5 img-left">
-                <img class="img-responsive" src="img/about-snippet.jpg" alt="">
+            <div class="col-md-6 img-left">
+                <img class="img-responsive" src="img/img-about.png" alt="">
             </div>
             <div class="col-md-6">
-                <div class="promo-block-wrapper clearfix" style="margin-top: 70px;">
+                <div class="promo-block-wrapper clearfix">
                     <div class="promo-icon">
-                       <!--  <i class="fa fa-question"></i> -->
-
+                        <i class="fa fa-line-chart"></i>
                     </div>
                     <div class="promo-content">
-                        <!-- <h3>What We Do</h3> -->
+                        <h3>We teach you how to improve your business</h3>
 
-                        <p>The Big Beach Marathon is a marathon conducted in major cities in India, Singapore, Dubai and other parts of the world. Fitness is a very important part of life and this is what The Big Beach Marathon helps promote. Our aim is to recognize, appreciate and reward our runners from different backgrounds and places, all the while, spreading awareness about fitness and its many benefits.</p>
-                    </div>
-                </div>
-                <!-- <div class="promo-block-wrapper clearfix">
-                    <div class="promo-icon">
-                        <i class="fa fa-question"></i>
-
-                    </div>
-                    <div class="promo-content">
-                        <h3>What We Do</h3>
-
-                        <p>The Big Beach Marathon is a annual marathon event conducted in Chennai, Bengaluru, Pune, Goa, Pondicherry and Mumbai. The aim of this marathon is to recognise and appreciate our runners and spread awareness on fitness and its good effects on health.</p>
+                        <p>Lorem ipsum dolor sit consectetuer adipiscing elit nonummy ib uismod tincidunt ut laoreet
+                            dolore magna aliquam erat volutpat.</p>
                     </div>
                 </div> -->
                 <!-- /.promo-block-wrapper -->
 
                <!--  <div class="promo-block-wrapper clearfix">
                     <div class="promo-icon">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-life-ring"></i>
                     </div>
                     <div class="promo-content">
-                        <h3>Our Chapters</h3>
+                        <h3>We make the technology affordable for you</h3>
 
-                        <p>We have our Big Beach Runner charters in Chennai, Bengaluru, Pune, Goa, Pondicherry and Mumbai wherein the groups discuss and decide about daily runs training schedules.</p>
+                        <p>Lorem ipsum dolor sit consectetuer adipiscing elit nonummy ib uismod tincidunt ut laoreet
+                            dolore magna aliquam erat volutpat.</p>
                     </div>
                 </div> -->
                 <!-- /.promo-block-wrapper -->
 
-               <!--  <div class="promo-block-wrapper clearfix">
+<!--                 <div class="promo-block-wrapper clearfix">
                     <div class="promo-icon">
-                        <i class="fa fa-mobile"></i>
+                        <i class="fa fa-calculator"></i>
                     </div>
                     <div class="promo-content last-type">
-                        <h3>Future Initiatives</h3>
+                        <h3>Seamlessly grow wireless human capital before turnkey.</h3>
 
-                        <p>In light of our vision, we would be launching fitness training and tracking application for both iOs and Andriod shortly. This application would be useful for both professional runners and to the newbie`s who wish to train and improve their fitness.</p>
+                        <p>Lorem ipsum dolor sit consectetuer adipiscing elit nonummy ib uismod tincidunt ut laoreet
+                            dolore magna aliquam erat volutpat.</p>
                     </div>
                 </div> -->
                 <!-- /.promo-block-wrapper -->
 
-            </div>
+  <!--           </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- .x-features -->
 
 <!-- <section class="team ptb-100">
@@ -415,7 +291,7 @@ and (max-width: 1366px){
             </div> -->
             <!-- /.col-sm-4 -->
 
-          <!--   <div class="col-sm-4">
+           <!--  <div class="col-sm-4">
                 <figure class="thumbnail">
                     <a href="#"><img src="img/img-team-2.jpg" class="img-responsive" alt="Image"></a>
                     <figcaption class="caption text-center">
@@ -427,7 +303,7 @@ and (max-width: 1366px){
             </div> -->
             <!-- /.col-sm-4 -->
 
-        <!--     <div class="col-sm-4">
+            <!-- <div class="col-sm-4">
                 <figure class="thumbnail">
                     <a href="#"><img src="img/img-team-3.jpg" class="img-responsive" alt="Image"></a>
                     <figcaption class="caption text-center">
@@ -441,7 +317,7 @@ and (max-width: 1366px){
 
        <!--  </div> -->
         <!-- /.row -->
-        <!-- <div class="row">
+      <!--   <div class="row">
             <div class="col-sm-4">
                 <figure class="thumbnail">
                     <a href="#"><img src="img/img-team-4.jpg" class="img-responsive" alt="Image"></a>
@@ -454,7 +330,7 @@ and (max-width: 1366px){
             </div> -->
             <!-- /.col-sm-4 -->
 
-            <!-- <div class="col-sm-4">
+           <!--  <div class="col-sm-4">
                 <figure class="thumbnail">
                     <a href="#"><img src="img/img-team-5.jpg" class="img-responsive" alt="Image"></a>
                     <figcaption class="caption text-center">
@@ -466,7 +342,7 @@ and (max-width: 1366px){
             </div> -->
             <!-- /.col-sm-4 -->
 
-        <!--     <div class="col-sm-4">
+           <!--  <div class="col-sm-4">
                 <figure class="thumbnail">
                     <a href="#"><img src="img/img-team-6.jpg" class="img-responsive" alt="Image"></a>
                     <figcaption class="caption text-center">
@@ -478,7 +354,7 @@ and (max-width: 1366px){
             </div> -->
             <!-- /.col-sm-4 -->
 
-       <!--  </div> -->
+<!--         </div> -->
         <!-- /.row -->
 <!--     </div> -->
     <!-- /.container -->
@@ -496,7 +372,7 @@ and (max-width: 1366px){
         <div id="testimonialSlider" class="carousel slide" data-ride="carousel"> -->
 
             <!-- Wrapper for slides -->
-<!--             <div class="carousel-inner" role="listbox">
+            <!-- <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <blockquote>
                         <ul>
@@ -538,7 +414,7 @@ and (max-width: 1366px){
                 </div>
             </div> -->
             <!-- Controls -->
-<!--             <a class="left carousel-control" href="#testimonialSlider" role="button" data-slide="prev">
+          <!--   <a class="left carousel-control" href="#testimonialSlider" role="button" data-slide="prev">
                 <span><i class="fa fa-angle-left"></i></span>
                 <span class="sr-only">Previous</span>
             </a>
@@ -589,12 +465,5 @@ and (max-width: 1366px){
 <?php
 include("html/footer.html")
 ?>
-<script type="text/javascript">
-
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-</script>
 
 

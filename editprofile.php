@@ -5,20 +5,18 @@ $user = include("class/getuser.php");
 include("html/header.html");
 //include_once 'class/auth.php';
 ?>
-    <style type="text/css">
-    .navbar-default{
-      background-color: #3CAFC4;
-    }
-        #leftPanel{
+<style type="text/css">
+.navbar-default{
+  background-color: #3CAFC4;
+}
+/*        #leftPanel{
     background-color:#3cafc4;
     color:#fff;
     text-align: center;
 }
-
 #rightPanel{
     min-height:415px;
-}
-
+}*/
 /* Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
   height: 5px;
@@ -42,11 +40,38 @@ include("html/header.html");
   top: 0;
   opacity: 0;
 }
-.nav-tabs  a{
+.nav-tabs > li > a{
     color: #3cafc4; 
 }
 .ptb-100{
     padding-top: 200px;
+}
+.nav-tabs > li.active > a{
+    color: white !important;
+    background-color: #3cafc4 !important;
+}
+/*.well{
+    padding-top:0px;
+}*/
+.breadcrumb{
+    background: none !important;
+}
+
+ul > .text-center.breadcrumb > li > a{
+    color: #3cafc4 !important;
+}
+@media screen and (max-width: 600px){
+  .navbar-default {
+    background: #3CAFC4 !important;
+    padding: 10px 0;
+    border-bottom: none;
+}
+#profile-img{
+  width: 50% !important;
+}
+}
+hr{
+  border-top: 1px solid #ddd !important;
 }
 input[type="date"]::-webkit-inner-spin-button{
   display: none;
@@ -68,7 +93,16 @@ input[type='number'] {
 .verticalLine {
   border-left: 2px solid #ddd;
   padding-right: 20px;
+  margin-top: 175px;
 }
+.img-circle {
+    border-radius: 0% !important;
+}
+/*@media (min-width:801px) {
+  .verticalLine {
+  width: 25% !important;
+}
+}*/
 </style>
 
 
@@ -130,27 +164,35 @@ input[type='number'] {
     <div class="row">
       <div class="col-md-12 well">
         <div class="col-md-12">
-          <h2>Edit profile</h2>
-            <hr class="">
-              <div>  <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
-<a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
-                  <h2>Profile Pic</h2>   
+          <!-- <h2>Edit profile</h2>
+            <hr class=""> -->
+              <div>  
+                
+                <h2>Profile Pic</h2>   
               </div>
         </div>
-        <div class="container">
-          <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
-            <?php 
+             <?php 
                 //session_start();
-                if (isset($_SESSION['member']) == '') {
+                if($user['Membership'] == 0){
                 ?>
                 <form role="form" enctype="multipart/form-data" action="class/profile.php" method="POST">
+                <div class="row">
+                 <div class="col-md-4 pull-left" style="margin-bottom: 10px;">
                     <?php if($user['profile'] != ""): ?>
-                                                      <img src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
-                                                      <?php else: ?>
-                                          <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
-                                          <?php endif; ?>
-                                      <input type="file"  class="field-long" name="image"/> 
+                         <img style="cursor: pointer;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail profile-img">
+                    <?php else: ?>
+                    <img style="cursor: pointer;" src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail profile-img">
+                <?php endif; ?>
+                <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
+                <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
+                <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/> 
+                </div>
+                <div class="col-md-8">
+                  <h2><?php echo $user['FirstName']; ?> <?php echo $user['LastName']; ?></h2>
+                  <p><?php echo $user['email']; ?></p>
+                </div>
+                </div>  
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -166,41 +208,42 @@ input[type='number'] {
                         </div>
                     </div>
                     <div class="row">
-                      <div class="col-xs-12 col-sm-6 col-md-6">
+                      <!-- <div class="col-xs-12 col-sm-6 col-md-6">
                          <div class="form-group" >
                             <label>Email</label>
                               <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" tabindex="3" value ="<?php echo $user['email']; ?>" readonly= "true" style="cursor: not-allowed;">
                         
                               <input type="hidden" name="role_update" id="email" class="form-control input-lg" value ="User" readonly= "true">
                           </div>
-                      </div>
+                      </div> -->
                       <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                          <label>Group</label>
-                                <select style="cursor: not-allowed;" disabled="true" class="form-control" id="sel1" name="groupname" value ="<?php echo $user['Group']; ?>" required readonly= "true">
-                                  <option value="">Select Group</option>
-                                  <option name="groupname" value="Bangalore">Big Beach runners - Bangalore</option>
-                                  <option name="groupname" value="Chennai">Big Beach runners - Chennai</option>
-                                  <option name="groupname" value="Pune">Big Beach runners - Pune</option>
-                                </select>
-                        </div>
-                      </div>
-                    </div>
-                  <div class="row">
-                     <div class="col-xs-12 col-sm-6 col-md-6">
                       <div class="form-group">
                         <label for="">Sex</label>
-                          <select style="cursor: not-allowed;" class="form-control" id="sel1" name="Gender" value ="<?php echo $user['Gender']; ?>" required disabled="true"  readonly= "true" >
+                          <select style="cursor: not-allowed;border-color: #f006;" class="form-control" id="sel1" name="Gender" value ="<?php echo $user['Gender']; ?>" required disabled="true"  readonly= "true" data-toggle="tooltip" title="Become a Member To Update this Information">
                             <option name="Gender" value="">Select Gender</option>
                             <option name="Gender" value="Male">Male</option>
                             <option  name="Gender" value="Female">Female</option>
                           </select>
                       </div>
-                  </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label>Group</label>
+                            <select style="cursor: not-allowed;border-color: #f006;" disabled="true" class="form-control" id="groupname" name="groupname" value ="<?php echo $user['groupname']; ?>" required readonly= "true" data-toggle="tooltip" title="Become a Member To Update this Information">
+                              <option value="">Select Group</option>
+                              <option name="groupname" value="Bangalore">Big Beach runners - Bangalore</option>
+                              <option name="groupname" value="Chennai">Big Beach runners - Chennai</option>
+                              <option name="groupname" value="Pune">Big Beach runners - Pune</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="row">
+                     
                  <div class="col-xs-12 col-sm-6 col-md-6">
                   <div class="form-group">
                     <label for="">Blood Group</label>
-                      <select style="cursor: not-allowed;" disabled="true" class="form-control" id="sel1" name="blood" value ="<?php echo $user['blood']; ?>" required  readonly= "true" >
+                      <select style="cursor: not-allowed;border-color: #f006;" disabled="true" class="form-control" id="sel1" name="blood" value ="<?php echo $user['blood']; ?>" required  readonly= "true" data-toggle="tooltip" title="Become a Member To Update this Information">
                         <option  value="">Select Blood Group</option>
                         <option  name="blood" value="A+">A+</option>
                         <option  name="blood" value="A-">A-</option>
@@ -213,88 +256,68 @@ input[type='number'] {
                       </select>
                   </div>
                 </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group">
                  <label>Contact Number</label>
-                  <input style="cursor: not-allowed;" type="number" name="ContactNumber" id="ContactNumber" value ="<?php echo $user['ContactNumber']; ?>" class="form-control input-lg" placeholder="Enter Your Contact Number" tabindex="4" required disabled="true">
+                  <input style="cursor: not-allowed;border-color: #f006;" type="number" name="ContactNumber" id="ContactNumber" value ="<?php echo $user['ContactNumber']; ?>" class="form-control input-lg" placeholder="Enter Your Contact Number" tabindex="4" disabled="true" data-toggle="tooltip" title="Become a Member To Update this Information" required>
                 </div>
               </div>
+            </div>
+            <div class="row">
+              
             <div class="col-xs-12 col-sm-6 col-md-6">
               <div class="form-group">
                <label>Date Of Birth</label>
-                <input style="cursor: not-allowed;" type="date" name="DOB" id="date" value ="<?php echo $user['DOB']; ?>" class="form-control input-lg" placeholder="Enter Your Date Of Birth" tabindex="5" required disabled="true">
+                <input style="cursor: not-allowed;border-color: #f006;" type="date" name="DOB" id="date" value ="<?php echo $user['DOB']; ?>" class="form-control input-lg" placeholder="Enter Your Date Of Birth" tabindex="5" required disabled="true" data-toggle="tooltip" title="Become a Member To Update this Information">
               </div>
             </div>
-          </div>
-          <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
              <label>Height(in CM)</label>
-              <input style="cursor: not-allowed;" type="number" name="Height" id="Height" class="form-control input-lg" value ="<?php echo $user['Height']; ?>"  placeholder="Enter Your Height" tabindex="6" disabled="true">
+              <input style="cursor: not-allowed;border-color: #f006;" type="number" name="Height" id="Height" class="form-control input-lg" value ="<?php echo $user['Height']; ?>"  placeholder="Enter Your Height" tabindex="6" disabled="true" data-toggle="tooltip" title="Become a Member To Update this Information">
             </div>
           </div>
+          </div>
+          <div class="row">
+          
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
              <label>Weight(in KG)</label>
-              <input style="cursor: not-allowed;" type="number" name="Weight" id="Weight" class="form-control input-lg" value ="<?php echo $user['Weight']; ?>" placeholder="Enter Your Weight" tabindex="7" disabled="true">
+              <input style="cursor: not-allowed;border-color: #f006;" type="number" name="Weight" id="Weight" class="form-control input-lg" value ="<?php echo $user['Weight']; ?>" placeholder="Enter Your Weight" tabindex="7" disabled="true" data-toggle="tooltip" title="Become a Member To Update this Information">
             </div>
           </div>
+           <div class="col-xs-12 col-sm-6 col-md-6" style="margin-top: 30px;">
+            <input type="submit" value="Save"  name="memberupdate" class="btn btn-primary pull-right"/>
+          </div>
         </div>
-
-                    
-
-                    <!-- <div class="row">
-                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <label for="sel1">Sex</label>
-                                    <select class="form-control" id="sel1">
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                    </select>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-                            </div>
-                        </div>
-                    </div> -->
-                   <!--  <hr class=""> -->
-                   
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-12">
-
-                        <li>
-                      <input type="submit" value="Save"  name="role_update" class="btn btn-success btn-block btn-lg"/>
-                    </li>
-                            <!-- <input type="submit" value="Edit" class="btn btn-success btn-block btn-lg"> -->
-                                
-                            </div>
-                        
-                        <div class="col-xs-12 col-sm-6 col-md-6" style="display: none;"><a href="member.php" class="btn btn-lg btn-primary btn-block">Become a Member</a></div>
-                    </div>
-                </form>
+      <!--   <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-12">
+                <li>
+                  <input type="submit" value="Save"  name="role_update" class="btn btn-success btn-block btn-lg"/>
+                </li>   
+            </div>
+        </div> -->
+        </form>
                 <?php }?>
                 <?php 
-                //session_start();
-                if (isset($_SESSION['member']) != '') {
-                ?>
+                if($user['Membership'] != ''){
+                 ?>
                 <form role="form" enctype="multipart/form-data" action="class/profile.php" method="POST">
+                      <div class="row">
+                 <div class="col-md-4 pull-left" style="margin-bottom: 10px;">
                     <?php if($user['profile'] != ""): ?>
-                                                      <img style="width: 10%;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
-                                                      <?php else: ?>
-                                          <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
-                                          <?php endif; ?>
-                                      <input type="file"  class="field-long" name="image"/> 
+                         <img style="cursor: pointer;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail profile-img">
+                    <?php else: ?>
+                    <img style="cursor: pointer;" src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail profile-img">
+                <?php endif; ?>
+                <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/> 
+                </div>
+                <div class="col-md-8">
+                  <h2><?php echo $user['FirstName']; ?> <?php echo $user['LastName']; ?></h2>
+                  <input type="submit" value="Save"  name="memberupdate" class="btn btn-primary pull-right"/>
+                </div>
+                </div> 
+
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -385,20 +408,20 @@ input[type='number'] {
               <input style="" type="number" name="Weight" id="Weight" class="form-control input-lg" value ="<?php echo $user['Weight']; ?>" placeholder="Enter Your Weight" tabindex="7" >
             </div>
           </div>
-        </div><div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-12">
-
-                        <li>
-                      <input type="submit" value="Save"  name="memberupdate" class="btn btn-success btn-block btn-lg"/>
-                    </li></div>
-                        <div class="col-xs-12 col-sm-6 col-md-6" style="display: none;"><a href="member.php" class="btn btn-lg btn-primary btn-block">Become a Member</a></div>
-                    </div>
-                </form>
+        </div>
+<!--         <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-12">
+                <li>
+                  <input type="submit" value="Save"  name="memberupdate" class="btn btn-success btn-block btn-lg"/>
+                </li>
+            </div>
+            </div> -->
+        </div>
+        </form>
 <?php }?>
                 </div>
-                <div class="col-xs-12 col-md-6 verticalLine" style="height: 400px;">
-                 <p>
-                You are encouraged to apply for membership. Our membership thrives on the diversity of backgrounds & locations of our members to create a rich experience for all.</p>
+                <div class="col-xs-12 col-md-6 verticalLine" style="height: 500px;">
+                 <p>You are encouraged to apply for membership. Our membership thrives on the diversity of backgrounds & locations of our members to create a rich experience for all.</p>
 
                 <p>Providing discount and merchandise offer from the well known brands for the members of TBBM.</p>
 
@@ -408,8 +431,6 @@ input[type='number'] {
                         <div class="col-xs-12 col-md-12"><a href="member.php" class="btn btn-lg btn-primary btn-block">Become a Member</a>
                         </div>
                     </div>
-                </div>
-                </div>
                 </div>
                 </div>
                 </div>
@@ -437,7 +458,7 @@ input[type='number'] {
                         
                         <input type="hidden" name="role_update" id="email" class="form-control input-lg" value ="User" readonly= "true">
                     </div>
-                    <?php 
+                    <!--  <?php 
                 //session_start();
                 if ($user['Membership']!= 0) {
                 ?>
@@ -491,7 +512,7 @@ input[type='number'] {
               <input style="" type="number" name="Weight" id="Weight" class="form-control input-lg" value ="<?php echo $user['Weight']; ?>" placeholder="Enter Your Weight" tabindex="7" >
             </div>
           
-<?php }?> 
+<?php }?> -->
 
                     <!-- <div class="row">
                          <div class="col-xs-12 col-sm-12 col-md-12">
@@ -698,33 +719,15 @@ input[type='number'] {
 </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
-            </div>
-            <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 </section>
 
 <?php
 include("html/footer.html")
 ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+  $('.profile-img').click(function(){ $('#upload-btn').trigger('click'); });
+</script>
 

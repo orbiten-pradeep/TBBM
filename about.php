@@ -15,8 +15,8 @@ include("html/header.html")
 }
 
 .ptb-100 {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 55px;
+    padding-bottom: 55px;
 }
 .o2{
     margin-left: 30px;
