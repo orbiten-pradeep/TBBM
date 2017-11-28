@@ -26,8 +26,23 @@ require_once 'dbconnect.php';
     if($DBcon->query($query))
     {
       $query ="";
-      $query = "UPDATE users SET Membership='Paid' WHERE email= '$email'";
-      $DBcon->query($query);
+      $query = $DBcon->query("SELECT * FROM membership WHERE transactions_id ='$id'");
+      $data = $query->fetch_array(MYSQLI_ASSOC);
+      $DOB = $data['DOB'];
+      $Gender = $data['gender'];
+      $ContactNumber =$data['contact_number'];
+      $groupname =$data['groupname'];
+      $Blood =$data['blood_type'];
+      $Height =$data['Height'];
+      $Weight =$data['Weight'];
+      
+
+      $query = "UPDATE users SET DOB='$DOB',Gender='$Gender',ContactNumber='$ContactNumber',groupname='$groupname',blood='$Blood',Height='$Height',Weight='$Weight', Membership='Paid' WHERE email= '$email'";
+
+      if($DBcon->query($query))
+      {
+        require '../mail/Membership.php';
+      }
     }
   }
 

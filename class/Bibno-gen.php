@@ -8,52 +8,55 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-if($result1 = mysqli_query($link,"SELECT count(Bibno) as a FROM `tickets` WHERE KM = '10KM'"))
+if($result1 = mysqli_query($link,"SELECT count(Bibno) as a FROM `tickets` WHERE KM = '10KM' OR city='Chennai'"))
 {
     while ($row=mysqli_fetch_assoc($result1)) {
         # code...
-        $hal = "TBBMX";
-        $startdig = 2;
+        $hal = "CHX";
+        $startdig = 4;
+        $pad_char =0;
         $x = $row['a'] + 1;
 
-        $str = strlen($hal);
+        // $str = strlen($hal);
 
         
 
-        $zero = $str - $startdig;
+        // $zero = $str - $startdig;
 
-        // echo $zero;
-        // echo "</br>";
+        // // echo $zero;
+        // // echo "</br>";
         
-        for($i=0; $i<$zero;$i++)
-        {
-            $x = '0' . $x;
-        }
-             
-            $biX = $hal . $x;
+        // for($i=0; $i<$zero;$i++)
+        // {
+        //     $x = '0' . $x;
+        // }
+            $str =str_pad($x, $startdig,$pad_char,STR_PAD_LEFT);
+            $biX = $hal . $str;
              // echo $biX;
              // echo "<br/>";
 }
 }
-if($result1 = mysqli_query($link,"SELECT count(Bibno) as a FROM `tickets` WHERE KM = '21.1KM'"))
+if($result1 = mysqli_query($link,"SELECT count(Bibno) as a FROM `tickets` WHERE KM = '21.1KM' OR city='Chennai'"))
 {
     while ($row=mysqli_fetch_assoc($result1)) {
         # code...
-        $ful = "TBBMF";
-        $startdig = 2;
+        $ful = "CHF";
+        $startdig = 4;
+        $pad_char =0;
         $x = $row['a'] + 1;
 
-        $str = strlen($ful);
+       //  $str = strlen($ful);
 
-       $zero = $str - $startdig;
-        // echo $zero;
-        //  echo "</br>";
+       // $zero = $str - $startdig;
+       //  // echo $zero;
+       //  //  echo "</br>";
         
-        for($i=0; $i<$zero;$i++)
-        {
-            $x = '0' . $x;
-        }
-            $biF = $ful . $x;
+       //  for($i=0; $i<$zero;$i++)
+       //  {
+       //      $x = '0' . $x;
+       //  }
+        $str =str_pad($x, $startdig,$pad_char,STR_PAD_LEFT);
+            $biF = $ful . $str;
              // echo $biF;
             // echo "<br/>";
          

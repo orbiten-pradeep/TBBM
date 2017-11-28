@@ -676,7 +676,7 @@ and (max-width: 360px){
               </div>
             </div>
             <div class="">
-            <a href="events-details.php">
+            <a href="chennai.php">
             <button class="btn btn-lg btn-primary member-btn col-md-12 col-xs-12">Register Now</button>
             </a>
                 </div>
@@ -723,7 +723,9 @@ and (max-width: 360px){
               </div>
             </div>
             <div class="">
-            <button class="btn btn-lg btn-primary member-btn col-md-12 col-xs-12" disabled="true">Register Now</button>
+              <a href="bangalore.php">
+                <button class="btn btn-lg btn-primary member-btn col-md-12 col-xs-12">Register Now</button>
+              </a>
                 </div>
                 </div>
             </div>
@@ -769,7 +771,9 @@ and (max-width: 360px){
               </div>
             </div>
             <div class="">
-            <button class="btn btn-lg btn-primary member-btn col-md-12 col-xs-12" disabled="true">Register Now</button>
+            <a href="mumbai.php">
+            <button class="btn btn-lg btn-primary member-btn col-md-12 col-xs-12">Register Now</button>
+            </a>
                 </div>
                 </div>
             </div>
@@ -877,7 +881,11 @@ include("html/footer.html")
   var deadline = new Date('January 21 2018 05:30:00 GMT+0800');
   initializeClock('clockdiv', deadline);
   </script>
-  
+  <script type="text/javascript">
 
-  </script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+</script>
 

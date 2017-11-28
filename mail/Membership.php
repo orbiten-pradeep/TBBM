@@ -1,11 +1,23 @@
+
 <?php
 // if(!class_exists('PHPMailer')) {
 //     //require('phpmailer/class.phpmailer.php');
-// 	//require('phpmailer/class.smtp.php');
+//    //require('phpmailer/class.smtp.php');
 // }
 require 'PHPMailer/PHPMailerAutoload.php';
 //require_once("mail_configuration.php");
 
+require_once '../class/dbconnect.php';
+
+     $query = "";
+      $query = $DBcon->query("SELECT * FROM membership WHERE transactions_id='$id'");
+      while($row = $query->fetch_array(MYSQLI_ASSOC))
+      {
+      $Member = $row['membership_id'];
+      $email = $row['email'];
+      $phone = $row['phone'];
+      
+}
 $mail = new PHPMailer();
 // for server use
 $emailBody = '<html>
@@ -74,14 +86,16 @@ html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
                         <br/><br/>
                       Dear Candidate,<br/><br/>
                       Welcome to The Big Beach Marathon!<br/><br/>
-                      You Successfully Reset Password.<br/><br/>
+                      You Successfully Actived Your Membership. Here are your details:<br/><br/>
                       
+                      Email:  '.$email.'<br/><br/> 
+                      Membership_id:'.$Member.'<br></br>   
                   </td></tr>
                   
                   <tr><td align="center">
                         <div style="line-height: 24px;">
-                              <a href="http://thebigbeachmarathon.com/changepass.php?active_code=$str&email=$email" target="_blank" class="btn btn-danger block-center">
-                                  Click To Reset Your New Password
+                              <a href="http://thebigbeachmarathon.com" target="_blank" class="btn btn-danger block-center">
+                                  click 
                               </a>
                         </div>
                         <!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
@@ -108,7 +122,9 @@ html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
 </td></tr>
 </table>
 </html>';
-//$emailBody = "http://localhost/tbbm.git/trunk/changepass.php?active_code=$str&email=$email";
+
+
+//$emailBody = "http://localhost/vasan_tbbm/trunk/changepass.php?active_code=$str&email=$email";
 $mail->isSMTP();                                   // Set mailer to use SMTP
 // $mail->Host = 'smtp.gmail.com';                    // Specify main and backup SMTP servers
 // $mail->SMTPAuth = true;                            // Enable SMTP authentication
@@ -125,17 +141,19 @@ $mail->Port = 465;                               // TCP port to connect to
 $mail->SMTPDebug = 0;
 $mail->setFrom('contact@thebigbeachmarathon.com', 'The Big Beach Marathon ');
 $mail->addReplyTo('contact@thebigbeachmarathon.com', 'The Big Beach Marathon');
-$mail->ReturnPath='contact@thebigbeachmarathon.com';	
+$mail->ReturnPath='contact@thebigbeachmarathon.com';  
 $mail->AddAddress($email);
-$mail->Subject = "Forgot Password Recovery";		
+$mail->Subject = "Successfully Actived Membership | The Big Beach Marathon";          
 $mail->MsgHTML($emailBody);
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 $mail->isHTML(true);  // Set email format to HTML
 if(!$mail->Send()) {
-	$error_message = 'Problem in Sending Password Recovery Email';
+      $error_message = 'Problem in Sending Password Recovery Email';
 } else {
-	$success_message = 'Please check your email to reset password!';
+      $success_message = 'Please check your email to reset password!';
+
 
 }
+
 ?>

@@ -1,11 +1,25 @@
+
+
+
 <?php
 // if(!class_exists('PHPMailer')) {
 //     //require('phpmailer/class.phpmailer.php');
-// 	//require('phpmailer/class.smtp.php');
+//    //require('phpmailer/class.smtp.php');
 // }
 require 'PHPMailer/PHPMailerAutoload.php';
 //require_once("mail_configuration.php");
 
+require_once '../class/dbconnect.php';
+
+     $query = "";
+      $query = $DBcon->query("SELECT * FROM tickets WHERE transactions_id='$id'");
+      while($row = $query->fetch_array(MYSQLI_ASSOC))
+      {
+      $tickets = $row['tickets'];
+      $email = $row['email'];
+      $phone = $row['phone'];
+      
+}
 $mail = new PHPMailer();
 // for server use
 $emailBody = '<html>
@@ -74,14 +88,57 @@ html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
                         <br/><br/>
                       Dear Candidate,<br/><br/>
                       Welcome to The Big Beach Marathon!<br/><br/>
-                      You Successfully Reset Password.<br/><br/>
+                      You Successfully Booked Tickets. Here are your details:<br/><br/>
                       
+                      Email:  '.$email.'<br/><br/> 
+                      Phone:  '.$phone.'<br/><br/>
+                      Tickets:'.$tickets.'<br></br>   
                   </td></tr>
+                  <table>
+                        <thead>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Tshirts</th>
+                        <th>KM</th>
+                        <th>Bibno</th>
+                        </thead>
+                        <tbody>';
+                  // while ($data = mysqli_fetch_assoc($query)) {
+                  //       $name=$data['fullname'];
+                  //       $gender=$data['gender'];
+                  //       $Tshirts=$data['tshirt'];
+                  //       $KM =$data['KM'];
+                  //       $Bibno = $data['Bibno'];
+
+
+      $query = $DBcon->query("SELECT fullname, tshirt, KM, Bibno, gender FROM tickets WHERE transactions_id='$id'");
+      while ($data =$query->fetch_array(MYSQLI_ASSOC)) {
+
+              $name = $data['fullname'];
+              $gender =$data['gender'];
+              $Tshirts =$data['tshirt'];
+              $KM  = $data['KM'];
+              $Bibno = $data['Bibno'];
+
+                        
+                  $emailBody .='
                   
+                        <tr>
+                        <td>'.$name.'</td>
+                        <td>'.$gender.'</td>
+                        <td>'.$Tshirts.'</td>
+                        <td>'.$KM.'</td>
+                        <td>'.$Bibno.'</td>
+                        </tr>';
+             }
+                  $emailBody .='
+                     </tbody>
+
+                  </table>
                   <tr><td align="center">
                         <div style="line-height: 24px;">
-                              <a href="http://thebigbeachmarathon.com/changepass.php?active_code=$str&email=$email" target="_blank" class="btn btn-danger block-center">
-                                  Click To Reset Your New Password
+                              <a href="http://thebigbeachmarathon.com" target="_blank" class="btn btn-danger block-center">
+                                  click 
                               </a>
                         </div>
                         <!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"></div>
@@ -108,7 +165,9 @@ html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
 </td></tr>
 </table>
 </html>';
-//$emailBody = "http://localhost/tbbm.git/trunk/changepass.php?active_code=$str&email=$email";
+
+
+//$emailBody = "http://localhost/vasan_tbbm/trunk/changepass.php?active_code=$str&email=$email";
 $mail->isSMTP();                                   // Set mailer to use SMTP
 // $mail->Host = 'smtp.gmail.com';                    // Specify main and backup SMTP servers
 // $mail->SMTPAuth = true;                            // Enable SMTP authentication
@@ -125,17 +184,19 @@ $mail->Port = 465;                               // TCP port to connect to
 $mail->SMTPDebug = 0;
 $mail->setFrom('contact@thebigbeachmarathon.com', 'The Big Beach Marathon ');
 $mail->addReplyTo('contact@thebigbeachmarathon.com', 'The Big Beach Marathon');
-$mail->ReturnPath='contact@thebigbeachmarathon.com';	
+$mail->ReturnPath='contact@thebigbeachmarathon.com';  
 $mail->AddAddress($email);
-$mail->Subject = "Forgot Password Recovery";		
+$mail->Subject = "Tickes Booked Successfully | The Big Beach Marathon";          
 $mail->MsgHTML($emailBody);
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 $mail->isHTML(true);  // Set email format to HTML
 if(!$mail->Send()) {
-	$error_message = 'Problem in Sending Password Recovery Email';
+      $error_message = 'Problem in Sending Password Recovery Email';
 } else {
-	$success_message = 'Please check your email to reset password!';
+      $success_message = 'Please check your email to reset password!';
+
 
 }
+
 ?>

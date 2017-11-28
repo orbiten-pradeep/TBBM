@@ -19,11 +19,16 @@ require_once 'dbconnect.php';
       $query = $DBcon->query("SELECT * FROM transactions WHERE txnid = '$txnid'");
     $row = $query->fetch_array(MYSQLI_ASSOC);
     //print_r($row); exit(0);
+
     $query = "";
     $id = $row['ID'];
-    $email =$row['email'];
-    $query = "UPDATE membership SET membership_id=NULL,txnid = '$txnid' WHERE transactions_id ='$id'";
-    $DBcon->query($query);
+    
+
+    $query = "UPDATE membership SET Status='$status', membership_id = NULL, txnid = '$txnid' WHERE transactions_id ='$id'";
+    if($DBcon->query($query))
+      {
+        require '../mail/Membership.php';
+      }
     
   }
 
