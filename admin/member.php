@@ -32,23 +32,23 @@ include("adminheader.html");
               <thead>
                 <tr>
                   <th>ID</th>
+<th>Trans_ID</th>
+<th>Membership_id</th>
+<th>Txnid</th>
 <th>FirstName</th>
-<th>LastName</th>
-<th>email</th>
+<!-- <th>LastName</th> -->
+<th>Email</th>
+<th>Amount</th>
+<th>GroupName</th>
+<!-- <th>Gender</th>
+ <th>Blood</th> -->
+ <th>Phone</th>
 <th>DOB</th>
-<th>Gender</th>
-<th>ContactNumber</th>
 <th>Height</th>
 <th>Weight</th>
-<th>Membership</th>
- <th>blood</th>
- <th>role</th>
-<th>groups</th>
-<th>userid</th>
 <th>Status</th>
-<th>profile</th>
 <th>created</th>
-<th>Action</th>
+<th>Expire</th>
 
                   </tr>
               </thead>
@@ -58,22 +58,26 @@ require 'class/viewdetails.php';
         if ($Member->num_rows > 0) {    
           while($row = $Member->fetch_assoc()) {
       ?>
-      <tr class="table-row" id="row-<?php echo $row["ID"]; ?>"> 
-        <td class="table-row"><?php echo $row["ID"]; ?></td>
-        <td class="table-row"><?php echo $row["FirstName"]; ?></td>
-        <td class="table-row"><?php echo $row["LastName"]; ?></td>
+      <tr class="table-row" id="row-<?php echo $row["id"]; ?>"> 
+        <td class="table-row"><?php echo $row["id"]; ?></td>
+        <td class="table-row"><?php echo $row["transactions_id"]; ?></td>
+        <td class="table-row"><?php echo $row["membership_id"]; ?></td>
+        <td class="table-row"><?php echo $row["txnid"]; ?></td>
+        <td class="table-row"><?php echo $row["first_name"]; ?></td>
+        <!-- <td class="table-row"><?php echo $row["last_name"]; ?></td> -->
         <td class="table-row"><?php echo $row["email"]; ?></td>
-        <td class="table-row"><?php echo $row["DOB"]; ?></td>
-        <td class="table-row"><?php echo $row["Gender"]; ?></td>
-        <td class="table-row"><?php echo $row["ContactNumber"]; ?></td>
+        <td class="table-row"><?php echo $row["amount"]; ?></td>
+        <td class="table-row"><?php echo $row["groupname"]; ?></td>
+        <!-- <td class="table-row"><?php echo $row["gender"]; ?></td>
+       <td class="table-row"><?php echo $row["blood_type"]; ?></td> -->
+    <td class="table-row"><?php echo $row["contact_number"]; ?></td>
+         <td class="table-row"><?php echo $row["DOB"]; ?></td>
         <td class="table-row"><?php echo $row["Height"]; ?></td>
-        <td class="table-row"><?php echo $row["Weight"]; ?></td>
-        <td class="table-row"><?php echo $row["Membership"]; ?></td>
-       <td class="table-row"><?php echo $row["blood"]; ?></td>
-    <td class="table-row"><?php echo $row["role"]; ?></td>
-         <td class="table-row"><?php echo $row["groups"]; ?></td>
-        <td class="table-row"><?php echo $row["userid"]; ?></td>
-               <td class="table-row"> <?php
+          <td class="table-row"><?php echo $row["Weight"]; ?></td>
+            <td class="table-row"><?php echo $row["Status"]; ?></td>
+              <td class="table-row"><?php echo $row["create_at"]; ?></td>
+              <td class="table-row"><?php echo $row["expire_at"]; ?></td>
+               <!-- <td class="table-row"> <?php
 
 if( $row["Status"] == 0){
     echo "Processing";
@@ -92,13 +96,14 @@ if( $row["Status"] == 0){
                        </td>
  <td class="table-row"><?php echo $row["created"]; ?></td>
         
-        <!-- action -->
-        <td class="table-row" colspan="2"><a href="class/activate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" onclick="return confirm('Are you sure you want to DeActivate?')" /></a><a href="class/deactivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="DeActivate" src="icon/edit.png" onclick="return confirm('Are you sure you want to Activate?')" /></a><a href="class/viewuser.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" /></a></td>
+    
+        <td class="table-row" colspan="2"><a href="class/activate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" onclick="return confirm('Are you sure you want to DeActivate?')" /></a><a href="class/deactivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="DeActivate" src="icon/edit.png" onclick="return confirm('Are you sure you want to Activate?')" /></a><a href="class/viewuser.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" /></a></td>-->
       </tr>
       <?php
           }
         }
-      ?>
+      ?> 
+
 
               </tbody>
             </table>

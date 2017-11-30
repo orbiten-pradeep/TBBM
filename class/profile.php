@@ -7,7 +7,8 @@ if (isset($_SESSION['firstname'])!="") {
 require_once 'dbconnect.php';
 //$user = include("getuser.php");
 include("auth.php");
-
+$sql = "SELECT * FROM membership where $email='$email'";
+$result = $DBcon->query($sql); 
 
 if(isset($_POST['role_update'])) {
 	$firstname = strip_tags($_POST['firstname']);
@@ -37,8 +38,15 @@ if(isset($_POST['role_update'])) {
 	}
 
 }
- else
+else
   {
+     $que = "UPDATE users SET firstname ='$firstname', lastname='$lastname' WHERE email='$email' ";
+      if ($DBcon->query($que)) { 
+
+    // $msg = 'Image Uploaded Successfully'; 
+    // header("Location: ../profile.php");
+  }
+
       $msg =  'Please Upload Real Image';
          header("location:../profile.php");
   }

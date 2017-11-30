@@ -263,7 +263,6 @@
 <script src="js/mobile-menu.js"></script>
 <script src="js/flexSlider/jquery.flexslider-min.js"></script>
 <script src="js/scripts.js"></script>
-<!-- <script src="js/custom.js"></script> -->
 
 
 <script type="text/javascript">
@@ -338,6 +337,8 @@ toastr.warning('Signup Error. This E-Mail ID is Already In Use, Try Again!')
 <?php if (isset($_SESSION['password_error'])) { ?>
     toastr.error('Password Not yet Updated', 'Password',{timeOut: 5000});
     <?php unset($_SESSION['password_error']); } ?>
+
+ 
 
   });
   

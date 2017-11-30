@@ -15,7 +15,8 @@ if ($data->num_rows > 0) {
   //mail($email, "Reset Password", "To reset your Password, Please visit this: $url", "From: roslin.albert@gmail.com\r\n");
   $DBcon->query("UPDATE users SET active_code='$str',Status='2' WHERE email='$email'");
   $_SESSION['forgot_info'] = "Plz Check Ur Email!!";
-  echo "Plz Check Ur Email!";
+  // echo "Plz Check Ur Email!";
+  header("Location: ../join.php");
   //echo $str;
 }
     else {

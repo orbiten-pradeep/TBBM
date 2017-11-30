@@ -123,6 +123,10 @@ if(!empty($hash))
       require 'Bibno-gen.php';
       $half = $biX;
       $Full = $biF;
+      $BAhalf = $BAX;
+      $BAfull = $BAF;
+      $MUhalf = $MUX;
+      $MUfull = $MUF;
       # code...
       $tickets = strip_tags($_POST['tickets']);
       $fullname = strip_tags($value);
@@ -142,7 +146,7 @@ if(!empty($hash))
       $phone = $DBcon->real_escape_string($phone); 
       $city = $DBcon->real_escape_string($city);    
       
-     if($KM == "10KM")
+     if($KM == "10KM" && $city == "Chennai")
       {
       $query = "";
       $query = "INSERT INTO tickets(tickets, fullname,tshirt,KM,Bibno,gender,email,phone,city, transactions_id) VALUES('$tickets','$fullname','$tshirt','$KM','$half','$gender','$email','$phone','$city','$trans_id')";
@@ -156,7 +160,7 @@ if(!empty($hash))
     $_SESSION['ticket_error'] = "Sry Ur Tickets Are Not Booked!!!!";
       }
     }
-    else{
+    elseif($KM == "21.1KM" && $city == "Chennai"){
 
       $query = "";
       $query = "INSERT INTO tickets(tickets, fullname,tshirt,KM,Bibno,gender,email,phone,city, transactions_id) VALUES('$tickets','$fullname','$tshirt','$KM','$Full','$gender','$email','$phone','$city','$trans_id')";
@@ -168,6 +172,59 @@ if(!empty($hash))
     $_SESSION['ticket_error'] = "Sry Ur Tickets Are Not Booked!!!!";
       }
     }
+    elseif($KM == "10KM" && $city == "Bangalore"){
+
+      $query = "";
+      $query = "INSERT INTO tickets(tickets, fullname,tshirt,KM,Bibno,gender,email,phone,city, transactions_id) VALUES('$tickets','$fullname','$tshirt','$KM','$BAhalf','$gender','$email','$phone','$city','$trans_id')";
+             if($DBcon->query($query) ) {
+          $_SESSION['ticket_success'] = "Ur Tickets has Booked!!";
+
+      }else {
+       
+    $_SESSION['ticket_error'] = "Sry Ur Tickets Are Not Booked!!!!";
+      }
+    }
+    elseif($KM == "21.1KM" && $city == "Bangalore"){
+
+      $query = "";
+      $query = "INSERT INTO tickets(tickets, fullname,tshirt,KM,Bibno,gender,email,phone,city, transactions_id) VALUES('$tickets','$fullname','$tshirt','$KM','$BAfull','$gender','$email','$phone','$city','$trans_id')";
+             if($DBcon->query($query) ) {
+          $_SESSION['ticket_success'] = "Ur Tickets has Booked!!";
+
+      }else {
+       
+    $_SESSION['ticket_error'] = "Sry Ur Tickets Are Not Booked!!!!";
+      }
+    }
+    elseif($KM == "10KM" && $city == "Mumbai"){
+
+      $query = "";
+      $query = "INSERT INTO tickets(tickets, fullname,tshirt,KM,Bibno,gender,email,phone,city, transactions_id) VALUES('$tickets','$fullname','$tshirt','$KM','$MUhalf','$gender','$email','$phone','$city','$trans_id')";
+             if($DBcon->query($query) ) {
+          $_SESSION['ticket_success'] = "Ur Tickets has Booked!!";
+
+      }else {
+       
+    $_SESSION['ticket_error'] = "Sry Ur Tickets Are Not Booked!!!!";
+      }
+    }
+    elseif($KM == "21.1KM" && $city == "Mumbai"){
+
+      $query = "";
+      $query = "INSERT INTO tickets(tickets, fullname,tshirt,KM,Bibno,gender,email,phone,city, transactions_id) VALUES('$tickets','$fullname','$tshirt','$KM','$MUfull','$gender','$email','$phone','$city','$trans_id')";
+             if($DBcon->query($query) ) {
+          $_SESSION['ticket_success'] = "Ur Tickets has Booked!!";
+
+      }else {
+       
+    $_SESSION['ticket_error'] = "Sry Ur Tickets Are Not Booked!!!!";
+      }
+    }
+
+
+
+
+
     }
   }
   else {

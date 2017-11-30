@@ -35,9 +35,10 @@ require_once 'dbconnect.php';
       $Blood =$data['blood_type'];
       $Height =$data['Height'];
       $Weight =$data['Weight'];
+      $memberId =$data['membership_id'];
       
 
-      $query = "UPDATE users SET DOB='$DOB',Gender='$Gender',ContactNumber='$ContactNumber',groupname='$groupname',blood='$Blood',Height='$Height',Weight='$Weight', Membership='Paid' WHERE email= '$email'";
+      $query = "UPDATE users SET DOB='$DOB',Gender='$Gender',ContactNumber='$ContactNumber',groupname='$groupname',blood='$Blood',Height='$Height',Weight='$Weight', Membership='$memberId' WHERE email= '$email'";
 
       if($DBcon->query($query))
       {

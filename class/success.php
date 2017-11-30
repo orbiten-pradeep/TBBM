@@ -22,7 +22,10 @@ require_once 'dbconnect.php';
     $query = "";
     $id = $row['ID'];
     $query = "UPDATE tickets SET Status= '$status', txnid = '$txnid' WHERE transactions_id ='$id'";
-    $DBcon->query($query);
+    if($DBcon->query($query))
+      {
+        require '../mail/tickets.php';
+      }
   }
 
   header("Location: ../events.php");

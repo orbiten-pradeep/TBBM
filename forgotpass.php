@@ -38,44 +38,21 @@ color: #313131 !important;
 <section class="x-services ptb-100 gray-bg">
 <section class="contact-form ptb-100">
     <div class="container text-center">
-        <!-- <div class="row"> -->
-            <!-- <div id="" class=""> -->
-     <!--  <div class=""> -->
-          <!-- <div class=""> -->
-             <!--  <h4 class="" id="">Welcome To The Big Beach Marathon</h4> -->
-          <!-- </div> -->
-          <!-- <div class=""> -->
-              <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                      <div class="well">
-                          
-<form class="form-signin" method="POST" action="class/reset.php">
-
- <h2 class="form-signin-heading">Forgot Password</h2>
-
-        <div class="form-group user-email">
-
-   
-    <input type="text" name="email" class="form-control" placeholder="Enter your email.." required>
-
-  </div>
-
-  <br />
-
-        <button class="btn btn-success btn-block" name="forgotpass" type="submit">Forgot Password</button>
-
-        <a class="btn btn-lg btn-primary btn-block" href="join.php">Login</a>
-
-      </form>
-
-                      </div>
-                  </div>
-                 </div>
-          <!-- </div> -->
-     <!--  </div> -->
-  <!-- </div> -->
-        <!-- </div> -->
-
+      <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+              <div class="well">                         
+                <form class="form-signin" method="POST" action="class/reset.php">
+                  <h2 class="form-signin-heading">Forgot Password</h2>
+                    <div class="form-group user-email">
+                      <input type="text" name="email" class="form-control" placeholder="Enter your email.." required>
+                    </div>
+                    <br />          
+                    <button class="btn btn-success btn-block" name="forgotpass" type="submit">Forgot Password</button>
+                      <a class="btn btn-lg btn-primary btn-block" href="join.php">Login</a>
+                </form>
+              </div>
+            </div>
+        </div>
     </div>
 </section>
 </section>

@@ -203,7 +203,7 @@ and (max-width: 1366px){
         <h1 id="first-title">Running is not about being better than someone else.<span id="second-title">It’s about being better than you used to be.</span></h1>
         <center> 
                 <div class="col-md-12 text-center btn-mem">
-                <a href="#" class="btn btn-lg btn-primary member-btn" style="cursor: not-allowed;" disabled data-toggle="tooltip" title="Check out this link shortly for exciting offers and merchandise!">Become a Member</a>
+                <a href="#" class="btn btn-lg btn-primary member-btn" data-toggle="tooltip" title="Check out this link shortly for exciting offers and merchandise!">Become a Member</a>
                 </div>
             </center>
     </div>

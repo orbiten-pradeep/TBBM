@@ -532,8 +532,8 @@ and (max-width: 1920px){
                 </div>
             </div>
             <div class="text-center">
-                <!-- <button href="#" class="btn btn-lg btn-primary member-btn" data-toggle="modal" data-target="#half-mar-modal" data-backdrop="static" data-keyboard="false">Register Now</button> -->
-                <button href="#" class="btn btn-lg btn-primary member-btn" disabled="true"  data-toggle="tooltip" title="Check out this link shortly for exciting offers and merchandise!">Register Now</button>
+                <button href="#" class="btn btn-lg btn-primary member-btn" data-toggle="modal" data-target="#half-mar-modal" data-backdrop="static" data-keyboard="false">Register Now</button>
+                <!-- <button href="#" class="btn btn-lg btn-primary member-btn" disabled="true"  data-toggle="tooltip" title="Check out this link shortly for exciting offers and merchandise!">Register Now</button> -->
             </div>
         </div>
     </div>

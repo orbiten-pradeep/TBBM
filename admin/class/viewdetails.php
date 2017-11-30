@@ -16,7 +16,7 @@ $full = $DBcon->query($sql2);
 $sql3 = "SELECT * FROM tickets where KM = '10KM'";
 $half = $DBcon->query($sql3); 
 
-$sql4 = "SELECT * FROM users where Membership!='' ";
+$sql4 = "SELECT * FROM membership ";
 $Member = $DBcon->query($sql4); 
 
 $sql5 = "SELECT * FROM transactions where paygatestatus = 'Cancelled by user'";
