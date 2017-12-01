@@ -55,6 +55,7 @@ include("adminheader.html");
 require 'class/viewdetails.php';
         if ($half->num_rows > 0) {    
           while($row = $half->fetch_assoc()) {
+            $uid = $row["ID"];
       ?>          
       <tr class="table-row" id="row-<?php echo $row["ID"]; ?>"> 
         <td class="table-row"><?php echo $row["ID"]; ?></td>
@@ -70,10 +71,9 @@ require 'class/viewdetails.php';
         <td class="table-row"><?php echo $row["Bibno"]; ?></td>
         <td class="table-row"><?php echo $row["Status"]; ?></td>
         <td class="table-row"><?php echo $row["created"]; ?></td>
+        <td class="table-row"><a href="viewticket.php?id=<?php echo $uid; ?>&name=trans"><button class="btn btn-primary">View</button></a></td>
         
-        <!-- action -->
-       <!--  <td class="table-row" colspan="2"><a href="msgdetails.php?contactid=<?php echo $row["contactid"]; ?>" class="link">View Details</a>&nbsp;&nbsp;<a href="Reply.php?contactid=<?php echo $row["contactid"]; ?>" class="link">Reply</a>&nbsp;&nbsp;<a href="delcontact.php?contactid=<?php echo $row["contactid"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to delete?')" src="../admin/icon/delete.png"/></a></td>
-       --></tr>
+        </tr>
       <?php
           }
         }

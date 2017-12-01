@@ -3,3 +3,21 @@
 [17-Nov-2017 06:46:41 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
 [17-Nov-2017 06:54:56 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
 [17-Nov-2017 06:55:08 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/viewadmin.php on line 6
+[30-Nov-2017 08:08:12 UTC] PHP Notice:  Undefined variable: _SESSION in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/getuser.php on line 9
+[30-Nov-2017 08:08:35 UTC] PHP Notice:  Undefined variable: _SESSION in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/getuser.php on line 9
+[30-Nov-2017 08:08:35 UTC] PHP Notice:  Undefined variable: _SESSION in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/adminprofile.php on line 62
+[30-Nov-2017 10:36:33 UTC] PHP Warning:  include(adminheader.html): failed to open stream: No such file or directory in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:36:33 UTC] PHP Warning:  include(): Failed opening 'adminheader.html' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:36:33 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 10
+[30-Nov-2017 10:36:40 UTC] PHP Warning:  include(adminheader.html): failed to open stream: No such file or directory in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:36:40 UTC] PHP Warning:  include(): Failed opening 'adminheader.html' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:36:40 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 10
+[30-Nov-2017 10:36:58 UTC] PHP Warning:  include(adminheader.html): failed to open stream: No such file or directory in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:36:58 UTC] PHP Warning:  include(): Failed opening 'adminheader.html' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:36:58 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 10
+[30-Nov-2017 10:37:08 UTC] PHP Warning:  include(adminheader.html): failed to open stream: No such file or directory in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:37:08 UTC] PHP Warning:  include(): Failed opening 'adminheader.html' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:37:08 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 10
+[30-Nov-2017 10:37:14 UTC] PHP Warning:  include(adminheader.html): failed to open stream: No such file or directory in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:37:14 UTC] PHP Warning:  include(): Failed opening 'adminheader.html' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 3
+[30-Nov-2017 10:37:14 UTC] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/gpkish28/public_html/thebigbeachmarathon.com/admin/class/msgdetails.php on line 10

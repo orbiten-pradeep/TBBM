@@ -469,6 +469,14 @@ and (max-width: 1920px){
 .modal-backdrop{
   z-index: 0 !important;
 }
+
+.ptb-100 {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+.x-features {
+    padding: 55px 0 55px;
+}
 </style>
 
 

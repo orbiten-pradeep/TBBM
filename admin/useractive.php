@@ -19,231 +19,8 @@ include("adminheader.html");
   <div id="content-header">
     <div id="breadcrumb"> <a href="adminhome.php" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Tables</a> </div>
     </div>
- <!--  <div class="container-fluid">
-    <hr>
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-            <h5>Static table</h5>
-          </div>
-          <div class="widget-content nopadding">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="odd gradeX">
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0</td>
-                  <td>Win 95+</td>
-                  <td class="center"> 4</td>
-                  <td class="center">X</td>
-                </tr>
-                <tr class="even gradeC">
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0</td>
-                  <td>Win 95+</td>
-                  <td class="center">5</td>
-                  <td class="center">C</td>
-                </tr>
-                <tr class="odd gradeA">
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5</td>
-                  <td>Win 95+</td>
-                  <td class="center">5.5</td>
-                  <td class="center">A</td>
-                </tr>
-                <tr class="even gradeA">
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 6</td>
-                  <td>Win 98+</td>
-                  <td class="center">6</td>
-                  <td class="center">A</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon">
-            <input type="checkbox" id="title-checkbox" name="title-checkbox" />
-            </span>
-            <h5>Static table with checkboxes</h5>
-          </div>
-          <div class="widget-content nopadding">
-            <table class="table table-bordered table-striped with-check">
-              <thead>
-                <tr>
-                  <th><i class="icon-resize-vertical"></i></th>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0</td>
-                  <td>Win 95+</td>
-                  <td class="center"> 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0</td>
-                  <td>Win 95+</td>
-                  <td class="center">5</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0</td>
-                  <td>Win 95+</td>
-                  <td class="center"> 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0</td>
-                  <td>Win 95+</td>
-                  <td class="center">5</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5</td>
-                  <td>Win 95+</td>
-                  <td class="center">5.5</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 6</td>
-                  <td>Win 98+</td>
-                  <td class="center">6</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-            <h5>Static table with checkboxes in box with padding</h5>
-            <span class="label label-info">Featured</span> </div>
-          <div class="widget-content ">
-            <table class="table table-bordered table-striped with-check">
-              <thead>
-                <tr>
-                  <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
-                  <th>Column name</th>
-                  <th>Column name</th>
-                  <th>Column name</th>
-                  <th>Column name</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Row 1</td>
-                  <td>Row 2</td>
-                  <td>Row 3</td>
-                  <td>Row 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Row 1</td>
-                  <td>Row 2</td>
-                  <td>Row 3</td>
-                  <td>Row 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Row 1</td>
-                  <td>Row 2</td>
-                  <td>Row 3</td>
-                  <td>Row 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Row 1</td>
-                  <td>Row 2</td>
-                  <td>Row 3</td>
-                  <td>Row 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Row 1</td>
-                  <td>Row 2</td>
-                  <td>Row 3</td>
-                  <td>Row 4</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>Row 1</td>
-                  <td>Row 2</td>
-                  <td>Row 3</td>
-                  <td>Row 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-            <h5>Collspan Table Example</h5>
-            <span class="label label-info">Featured</span> </div>
-          <div class="widget-content nopadding">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>steave</td>
-                  <td>marki</td>
-                  <td>@hahas</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>john</td>
-                  <td>deo</td>
-                  <td>@john</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colspan="2">collspan text</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-  -->       <div class="widget-box"><div class="button_link btn btn-warning pull-right"><a href="add.php">Add New</a></div>
+ 
+      <div class="widget-box"><div class="button_link btn btn-warning pull-right"><a href="add.php">Add New</a></div>
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Users Data table</h5>
           </div>
@@ -259,10 +36,10 @@ include("adminheader.html");
 <th>DOB</th>
 <th>Gender</th>
 <th>ContactNumber</th>
-<th>Height</th>
+<!-- <th>Height</th>
 <th>Weight</th>
 <th>Membership</th>
- <th>blood</th>
+ <th>blood</th> -->
  <th>role</th>
  <th>Status</th>
 <th>groups</th>
@@ -278,6 +55,7 @@ include("adminheader.html");
 require 'class/viewdetails.php';
         if ($activeuser->num_rows > 0) {    
           while($row = $activeuser->fetch_assoc()) {
+            $uid = $row["ID"];
       ?>
       <tr class="table-row" id="row-<?php echo $row["ID"]; ?>"> 
         <td class="table-row"><?php echo $row["ID"]; ?></td>
@@ -287,10 +65,10 @@ require 'class/viewdetails.php';
         <td class="table-row"><?php echo $row["DOB"]; ?></td>
         <td class="table-row"><?php echo $row["Gender"]; ?></td>
         <td class="table-row"><?php echo $row["ContactNumber"]; ?></td>
-        <td class="table-row"><?php echo $row["Height"]; ?></td>
+        <!-- <td class="table-row"><?php echo $row["Height"]; ?></td>
         <td class="table-row"><?php echo $row["Weight"]; ?></td>
         <td class="table-row"><?php echo $row["Membership"]; ?></td>
-       <td class="table-row"><?php echo $row["blood"]; ?></td>
+       <td class="table-row"><?php echo $row["blood"]; ?></td> -->
         <td class="table-row"><?php echo $row["role"]; ?></td>
         <td class="table-row"> <?php
 
@@ -315,7 +93,7 @@ if( $row["Status"] == 0){
       <td class="table-row"><?php echo $row["created"]; ?></td>
         
         <!-- action -->
-        <td class="table-row" colspan="2"><a href="class/viewuser.php?ID=<?php echo $row["ID"]; ?>" class="link">View Details</a> <a href="class/userdeactivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to deactivate?')" src="icon/delete.png"/></a></td>
+        <td class="table-row" colspan="2"><a href="viewuser.php?ID=<?php echo $uid; ?>" class="link">View Details</a> <a href="class/userdeactivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to deactivate?')" src="icon/delete.png"/></a></td>
       </tr>
 
       <?php

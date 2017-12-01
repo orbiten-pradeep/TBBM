@@ -35,9 +35,9 @@ include("adminheader.html");
 <th>DOB</th>
 <th>Gender</th>
 <th>ContactNumber</th>
-<th>Height</th>
-<th>Weight</th>
-<th>Membership</th>
+<!-- <th>Height</th>
+<th>Weight</th> -->
+<th>Membership</th> 
 <!-- <th>blood</th>
  --><th>role</th>
 <!-- <th>groups</th>
@@ -53,6 +53,7 @@ include("adminheader.html");
 require 'class/viewdetails.php';
         if ($inactiveuser->num_rows > 0) {    
           while($row = $inactiveuser->fetch_assoc()) {
+            $uid = $row["ID"];
       ?>
       <tr class="table-row" id="row-<?php echo $row["ID"]; ?>"> 
         <td class="table-row"><?php echo $row["ID"]; ?></td>
@@ -62,8 +63,8 @@ require 'class/viewdetails.php';
         <td class="table-row"><?php echo $row["DOB"]; ?></td>
         <td class="table-row"><?php echo $row["Gender"]; ?></td>
         <td class="table-row"><?php echo $row["ContactNumber"]; ?></td>
-        <td class="table-row"><?php echo $row["Height"]; ?></td>
-        <td class="table-row"><?php echo $row["Weight"]; ?></td>
+        <!-- <td class="table-row"><?php echo $row["Height"]; ?></td>
+        <td class="table-row"><?php echo $row["Weight"]; ?></td> -->
         <td class="table-row"><?php echo $row["Membership"]; ?></td>
        <!--  <td class="table-row"><?php echo $row["blood"]; ?></td>
         --> <td class="table-row"><?php echo $row["role"]; ?></td>
@@ -73,7 +74,7 @@ require 'class/viewdetails.php';
         --> <td class="table-row"><?php echo $row["created"]; ?></td>
         
         <!-- action -->
-         <td class="table-row" colspan="2"><a href="class/useractivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" onclick="return confirm('Are you sure you want to Activate?')" /></a><a href="class/viewuser.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="viewuser" src="icon/edit.png" /></a></td>
+         <td class="table-row" colspan="2"><a href="viewuser.php?ID=<?php echo $uid; ?>" class="link">View Details</a><a href="class/useractivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" onclick="return confirm('Are you sure you want to Activate?')" /></a></td>
           </tr>
       <?php
           }

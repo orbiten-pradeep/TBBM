@@ -25,9 +25,9 @@ $mail->Subject = 'Email from User';
 $mail->Body    = $bodyContent;
 
 if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    //echo 'Message could not be sent.';
+    //echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo 'Message has been sent';
+    //echo 'Message has been sent';
 }
 ?>

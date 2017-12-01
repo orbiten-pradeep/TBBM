@@ -60,7 +60,7 @@ require 'class/viewdetails.php';
         
         <!-- action -->
         <td class="table-row" colspan="2">
-<a href="class/msgdetails.php?ID=<?php echo $row["ID"]; ?>" class="link">View Details</a>&nbsp;&nbsp;<a href="mailto:<?php echo $row["email"]; ?>" class="link">Reply
+<a href="msgdetails.php?ID=<?php echo $row["ID"]; ?>" class="link">View Details</a>&nbsp;&nbsp;<a href="mailto:<?php echo $row["email"]; ?>" class="link">Reply
 </a>&nbsp;&nbsp;<a href="delcontact.php?ID=<?php echo $row["ID"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to delete?')" src="icon/delete.png"/></a></td>
       </tr>
       <?php

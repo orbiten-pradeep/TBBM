@@ -47,13 +47,9 @@ include("adminheader.html");
 <th>txnid</th>
 <th>amount</th>
 <th>productinfo</th> 
-<th>hash</th>
 <th>status</th>
- <th>unmappedstatus</th>
-<th>field9</th> 
-<th>bank_ref_num</th>
-<th>phone</th>
 <th>created</th>
+<th>Action</th>
 
 
                   </tr>
@@ -63,6 +59,7 @@ include("adminheader.html");
 require 'class/viewdetails.php';
         if ($transuccess->num_rows > 0) {    
           while($row = $transuccess->fetch_assoc()) {
+            $uid = $row["ID"];
       ?>
       <tr class="table-row" id="row-<?php echo $row["ID"]; ?>"> 
         <td class="table-row"><?php echo $row["ID"]; ?></td>
@@ -72,17 +69,11 @@ require 'class/viewdetails.php';
         <td class="table-row"><?php echo $row["txnid"]; ?></td>
         <td class="table-row"><?php echo $row["amount"]; ?></td>
         <td class="table-row"><?php echo $row["productinfo"]; ?></td>
-        <td class="table-row"><?php echo $row["hash"]; ?></td>
         <td class="table-row"><?php echo $row["status"]; ?></td>
-        <td class="table-row"><?php echo $row["unmappedstatus"]; ?></td>
-        <td class="table-row"><?php echo $row["paygatestatus"]; ?></td>
-        <td class="table-row"><?php echo $row["bank_ref_num"]; ?></td>
         <td class="table-row"><?php echo $row["phone"]; ?></td>
         <td class="table-row"><?php echo $row["created"]; ?></td>
-        
-        <!-- action -->
-        <!-- <td class="table-row" colspan="2"><a href="msgdetails.php?contactid=<?php echo $row["contactid"]; ?>" class="link">View Details</a>&nbsp;&nbsp;<a href="Reply.php?contactid=<?php echo $row["contactid"]; ?>" class="link">Reply</a>&nbsp;&nbsp;<a href="delcontact.php?contactid=<?php echo $row["contactid"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to delete?')" src="../admin/icon/delete.png"/></a></td>
-       --></tr>
+        <td class="table-row"><a href="viewdetails.php?id=<?php echo $uid; ?>&name=trans"><button class="btn btn-primary">View</button></a></td>
+       </tr>
       <?php
           }
         }

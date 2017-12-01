@@ -41,7 +41,7 @@ include("adminheader.html");
         <!--  <li class="bg_ls"> <a href="buttons.html"> <i class="icon-tint"></i> Buttons</a> </li>
          --><li class="bg_lb"> <a href="ticfailure.php"> <i class="icon-pencil"></i>Failure</a> </li>
         <!-- <li class="bg_lg"> <a href="calendar.html"> <i class="icon-calendar"></i> Calendar</a> </li> -->
-        -->
+      
       </ul>
     </div>
 <!--End-Action boxes-->    

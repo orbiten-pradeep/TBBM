@@ -27,81 +27,48 @@ include("adminheader.html");
   <div id="content-header">
     <div id="breadcrumb"> 
     <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> 
-    <a href="#" class="current">Transactions Details</a> 
+    <a href="#" class="current">User Details</a> 
     </div>
   </div>      
   <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-    <h5>Transactions Details</h5>
+    <h5>User Details</h5>
   </div>        
   <div class="widget-content nopadding">
     <table class="table table-bordered data-table">
-      
-   
-        
-        <?php
-        require 'class/dbconnect.php';
-                if(isset($_GET['id']) )
-                {
-                  $TID =$_GET['id'];
-                  $query =$DBcon->query("SELECT * FROM transactions WHERE ID = '$TID'");
-                  $row =$query->fetch_array(MYSQLI_ASSOC);
 
-                }
-                
-              ?>
-            
-              <tr><th>
+<?php
+ require 'class/dbconnect.php';
+if(isset($_GET['ID']))
+{
+  $ID =$_GET['ID'];
+$query = $DBcon->query("SELECT * FROM contact WHERE ID = '$ID'");
+$row = $query->fetch_array(MYSQLI_ASSOC);
+
+}
+?> 
+<tr><th>
               Name</th>
-              <td><?php echo $row['firstname']; ?></td>
+              <td><?php echo $row['username']; ?></td>
             </tr>
             <tr><th>
               Email</th>
               <td><?php echo $row['email']; ?></td>
             </tr>
-            <tr><th>
-              TXNID</th>
-              <td><?php echo $row['txnid']; ?></td>
-            </tr>
-            <tr><th>
-              Amount</th>
-              <td><?php echo $row['amount']; ?></td>
-            </tr>
-            <tr><th>
-              Product Info</th>
-              <td><?php echo $row['productinfo']; ?></td>
-            </tr>
-            <tr><th>
-              Hash</th>
-              <td><?php echo $row['hash']; ?></td>
-            </tr>
-            <tr><th>
-              Status</th>
-              <td><?php echo $row['status']; ?></td>
-            </tr>
-            <tr><th>
-              unmappedstatus</th>
-              <td><?php echo $row['unmappedstatus']; ?></td>
-            </tr>
-            <tr><th>
-              paygatestatus</th>
-              <td><?php echo $row['paygatestatus']; ?></td>
-            </tr>
-            <tr><th>
-              Bank Ref Number</th>
-              <td><?php echo $row['bank_ref_num']; ?></td>
-            </tr>
+            
             <tr><th>
               Phone</th>
-              <td><?php echo $row['phone']; ?></td>
+              <td><?php echo $row['Phone']; ?></td>
             </tr>
             <tr><th>
-              Create</th>
-              <td><?php echo $row['created']; ?></td>
+              Message</th>
+              <td><?php echo $row['message']; ?></td>
+            </tr>
+            <tr><th>
+              Create Time</th>
+              <td><?php echo $row['Created']; ?></td>
             </tr>
 
-             
-     
-    </table>
+</table>
   </div>
 </div>
 

@@ -60,5 +60,6 @@ include("html/header.html")
 include("html/footer.html")
 ?>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNlWBwjZo4GVb051QNL8rydrNpnbyC340&callback=myMap"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->

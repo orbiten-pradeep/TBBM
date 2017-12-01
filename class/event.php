@@ -472,10 +472,10 @@ function appendControls(num) {
   } 
 }
 
-function calcamount(tkt){
-    $('#price_mar').val("0");
-  $("#priceSpan_mar").text("0");
-}
+// function calcamount(tkt){
+//     $('#price_mar').val("0");
+//   $("#priceSpan_mar").text("0");
+// }
 
 $("#elcontainer").on('change', '.select-km', function(e){
      
@@ -523,8 +523,14 @@ $('#numNames').on('change', function(e) {
   appendControls(numSelected);
   if(numSelected == 0){
     $(".pay-btn").css('display','none');
+    $('#price_mar').val("0");
+  $("#priceSpan_mar").text("0");
+  $('#priceSpan_mar_proceed').text("0");
   } else{
-   $(".pay-btn").css('display','block'); 
+   $(".pay-btn").css('display','block');
+   $('#price_mar').val("0");
+ $("#priceSpan_mar").text("0"); 
+ $('#priceSpan_mar_proceed').text("0");
 }
 });
 (function ($) {

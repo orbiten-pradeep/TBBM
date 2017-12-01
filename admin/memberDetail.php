@@ -27,11 +27,11 @@ include("adminheader.html");
   <div id="content-header">
     <div id="breadcrumb"> 
     <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> 
-    <a href="#" class="current">Transactions Details</a> 
+    <a href="#" class="current">Member Details</a> 
     </div>
   </div>      
   <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-    <h5>Transactions Details</h5>
+    <h5>Member Details</h5>
   </div>        
   <div class="widget-content nopadding">
     <table class="table table-bordered data-table">
@@ -43,60 +43,85 @@ include("adminheader.html");
                 if(isset($_GET['id']) )
                 {
                   $TID =$_GET['id'];
-                  $query =$DBcon->query("SELECT * FROM transactions WHERE ID = '$TID'");
+                  $query =$DBcon->query("SELECT * FROM membership WHERE ID = '$TID'");
                   $row =$query->fetch_array(MYSQLI_ASSOC);
 
                 }
                 
               ?>
-            
-              <tr><th>
-              Name</th>
-              <td><?php echo $row['firstname']; ?></td>
+               <tr><th>
+              ID</th>
+              <td><?php echo $row['id']; ?></td>
+            </tr>
+             <tr><th>
+              Transaction_ID</th>
+              <td><?php echo $row['transactions_id']; ?></td>
+            </tr>
+            <tr><th>
+              Membership</th>
+              <td><?php echo $row['membership_id']; ?></td>
+            </tr>
+             <tr><th>
+              TXNID</th>
+              <td><?php echo $row['txnid']; ?></td>
+            </tr>
+             <tr><th>
+               First Name</th>
+              <td><?php echo $row['first_name']; ?></td>
+            </tr>
+            <tr><th>
+              Last Name</th>
+              <td><?php echo $row['last_name']; ?></td>
             </tr>
             <tr><th>
               Email</th>
               <td><?php echo $row['email']; ?></td>
             </tr>
             <tr><th>
-              TXNID</th>
-              <td><?php echo $row['txnid']; ?></td>
-            </tr>
-            <tr><th>
               Amount</th>
               <td><?php echo $row['amount']; ?></td>
             </tr>
             <tr><th>
-              Product Info</th>
-              <td><?php echo $row['productinfo']; ?></td>
+              GroupName</th>
+              <td><?php echo $row['groupname']; ?></td>
             </tr>
             <tr><th>
-              Hash</th>
-              <td><?php echo $row['hash']; ?></td>
+              Gender</th>
+              <td><?php echo $row['gender']; ?></td>
             </tr>
             <tr><th>
-              Status</th>
-              <td><?php echo $row['status']; ?></td>
-            </tr>
-            <tr><th>
-              unmappedstatus</th>
-              <td><?php echo $row['unmappedstatus']; ?></td>
-            </tr>
-            <tr><th>
-              paygatestatus</th>
-              <td><?php echo $row['paygatestatus']; ?></td>
-            </tr>
-            <tr><th>
-              Bank Ref Number</th>
-              <td><?php echo $row['bank_ref_num']; ?></td>
+              Blood</th>
+              <td><?php echo $row['blood_type']; ?></td>
             </tr>
             <tr><th>
               Phone</th>
-              <td><?php echo $row['phone']; ?></td>
+              <td><?php echo $row['contact_number']; ?></td>
+            </tr>
+           
+            <tr><th>
+              DOB</th>
+              <td><?php echo $row['DOB']; ?></td>
             </tr>
             <tr><th>
+              Height</th>
+              <td><?php echo $row['Height']; ?></td>
+            </tr>
+            <tr><th>
+              Weight</th>
+              <td><?php echo $row['Weight']; ?></td>
+            </tr>
+             <tr><th>
+              Status</th>
+              <td><?php echo $row['Status']; ?></td>
+            </tr>
+            
+            <tr><th>
               Create</th>
-              <td><?php echo $row['created']; ?></td>
+              <td><?php echo $row['create_at']; ?></td>
+            </tr>
+            <tr><th>
+              Expire</th>
+              <td><?php echo $row['expire_at']; ?></td>
             </tr>
 
              

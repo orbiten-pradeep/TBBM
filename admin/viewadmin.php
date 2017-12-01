@@ -43,57 +43,40 @@ include("adminheader.html");
                 if(isset($_GET['id']) )
                 {
                   $TID =$_GET['id'];
-                  $query =$DBcon->query("SELECT * FROM transactions WHERE ID = '$TID'");
+                  $query =$DBcon->query("SELECT * FROM admin  WHERE ID = '$TID'");
                   $row =$query->fetch_array(MYSQLI_ASSOC);
 
                 }
+                
                 
               ?>
             
               <tr><th>
               Name</th>
-              <td><?php echo $row['firstname']; ?></td>
+              <td><?php echo $row['Username']; ?></td>
             </tr>
             <tr><th>
               Email</th>
               <td><?php echo $row['email']; ?></td>
             </tr>
-            <tr><th>
-              TXNID</th>
-              <td><?php echo $row['txnid']; ?></td>
-            </tr>
-            <tr><th>
-              Amount</th>
-              <td><?php echo $row['amount']; ?></td>
-            </tr>
-            <tr><th>
-              Product Info</th>
-              <td><?php echo $row['productinfo']; ?></td>
-            </tr>
-            <tr><th>
-              Hash</th>
-              <td><?php echo $row['hash']; ?></td>
-            </tr>
+            
             <tr><th>
               Status</th>
               <td><?php echo $row['status']; ?></td>
             </tr>
             <tr><th>
-              unmappedstatus</th>
-              <td><?php echo $row['unmappedstatus']; ?></td>
+              Role</th>
+              <td><?php echo $row['role']; ?></td>
             </tr>
             <tr><th>
-              paygatestatus</th>
-              <td><?php echo $row['paygatestatus']; ?></td>
+              Active Code</th>
+              <td><?php echo $row['active_code']; ?></td>
             </tr>
             <tr><th>
-              Bank Ref Number</th>
-              <td><?php echo $row['bank_ref_num']; ?></td>
+              Gender</th>
+              <td><?php echo $row['Gender']; ?></td>
             </tr>
-            <tr><th>
-              Phone</th>
-              <td><?php echo $row['phone']; ?></td>
-            </tr>
+            
             <tr><th>
               Create</th>
               <td><?php echo $row['created']; ?></td>

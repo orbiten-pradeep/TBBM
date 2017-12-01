@@ -48,6 +48,7 @@ require 'class/viewdetails.php';
 
         if ($result->num_rows > 0) {    
           while($row = $result->fetch_assoc()) {
+            $uid =$row['ID'];
       ?>
       <tr class="table-row" id="row-<?php echo $row["ID"]; ?>"> 
         <td class="table-row"><?php echo $row["ID"]; ?></td>
@@ -79,7 +80,7 @@ if( $row["Status"] == 0){
        <td class="table-row"><?php echo $row["created"]; ?></td>
         
         <!-- action -->
-        <td class="table-row" colspan="2"><a href="class/viewadmin.php?ID=<?php echo $row["ID"]; ?>" class="link">View Details</a>&nbsp;&nbsp;<a href="class/activate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" onclick="return confirm('Are you sure you want to Activate?')" /></a> <a href="class/deactivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to deactivate?')" src="icon/delete.png"/></a></td>
+        <td class="table-row" colspan="2"><a href="viewadmin.php?ID=<?php echo $uid; ?>" class="link">View Details</a>&nbsp;&nbsp;<a href="class/activate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img title="Activate" src="icon/edit.png" onclick="return confirm('Are you sure you want to Activate?')" /></a> <a href="class/deactivate.php?ID=<?php echo $row["ID"]; ?>" class="link"><img name="delete" id="delete" title="Delete" onclick="return confirm('Are you sure you want to deactivate?')" src="icon/delete.png"/></a></td>
       </tr>
       <?php
           }
