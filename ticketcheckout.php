@@ -33,6 +33,9 @@ background-color: #e2e2e2 !important;
 border-color: #313131 !important;
 color: #313131 !important;
 }
+.navbar-default {
+    background-color: #3CAFC4 !important;
+}
 </style>
 
 <section class="x-services ptb-100 gray-bg">
@@ -65,7 +68,7 @@ color: #313131 !important;
 
         <button class="btn btn-success btn-block" name="checkout" type="submit">Submit</button>
 
-        <a class="btn btn-lg btn-primary btn-block" href="join.php">Login</a>
+        <!-- <a class="btn btn-lg btn-primary btn-block" href="join.php">Login</a> -->
 
       </form>
 

@@ -16,6 +16,7 @@
     padding-top: 40px;
     padding-bottom: 30px;
     }
+    
 </style>
 <!-- <section class="client-logo ptb-100 app-section">
     <div class="container-fluid">
@@ -90,10 +91,10 @@
              
             So, download the Big Beach Runners app and get started on your fitness journey.</p>
                     </div>
-                    <div class="col-md-4" style="margin-top: 10px;margin-left: -10px;">
+                    <div class="col-xs-6 col-md-4" style="margin-top: 10px;margin-left: -10px;">
                     <img src="img/play-store-download.jpg" class="img-responsive" style="cursor: pointer;">
                 </div>
-                <div class="col-md-4" style="margin-top: 10px;">
+                <div class="col-xs-6 col-md-4" style="margin-top: 10px;">
                     <img src="img/appstore.jpg" class="img-responsive" style="cursor: pointer;">
                 </div>
                 </div>
@@ -210,6 +211,7 @@
                 <li><a href="chapters.php">Chapters/Groups</a></li>
                 <li><a href="sponsors.php">Sponsors</a></li>
                 <li><a href="events.php">Events</a></li>
+                <li><a href="ticketcheckout.php">Tickets</a></li>
  <?php 
                 //session_start();
                 if (!isset($_SESSION['userSession'])) {
@@ -230,7 +232,7 @@
                                    <!--  <li><a href="member.php">Become a Member</a></li>
                                     <li><a href="merchandise.php">Merchandise</a></li>
                                     <li><a href="offers.php">Brands & Offers</a></li> -->
-                                    <li><a href="class/logout.php?logout">Logout</a>
+                                    <li><a href="class/logout.php?name=logout">Logout</a></li>
                                <!--  </ul>
                             </div>
                         </li>
@@ -338,7 +340,9 @@ toastr.warning('Signup Error. This E-Mail ID is Already In Use, Try Again!')
     toastr.error('Password Not yet Updated', 'Password',{timeOut: 5000});
     <?php unset($_SESSION['password_error']); } ?>
 
- 
+    <?php if (isset($_SESSION['check_error'])) { ?>
+    toastr.error('No Tickets booked in this id', 'Tickets',{timeOut: 5000});
+    <?php unset($_SESSION['check_error']); } ?>
 
   });
   

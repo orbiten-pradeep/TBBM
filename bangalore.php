@@ -437,9 +437,9 @@ and (max-width: 1920px){
 .control-form{
   padding: 6px 20px 6px 6px !important;
 }
-.marathon-pricing{
+/*.marathon-pricing{
   left:40px;
-}
+}*/
 .display-img{
   width: 50%;
 }

@@ -129,10 +129,12 @@
                 <!-- <li><a href="corporate.php">Corporates</a></li> -->
                 <li><a href="sponsors.php">Sponsors</a></li>
                 <li><a href="events.php">Events</a></li>
+                
                 <?php 
                 //session_start();
                 if (!isset($_SESSION['userSession'])) {
                 ?>
+                <li><a href="ticketcheckout.php">Tickets</a></li>
                 <li class="dropdown m-menu-fw"><a href="join.php" class="dropdown-toggle">Login/Signup
                <!--  <span><i class="fa fa-angle-down"></i></span> --></a><?php }?> 
               <!--   <?php 

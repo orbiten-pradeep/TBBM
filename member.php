@@ -57,7 +57,12 @@ input[type='number'] {
     -moz-appearance:textfield;
 }
 .navbar-default {
-    background-color: #3CAFC4;
+    background-color: #3CAFC4 !important;
+}
+@media (max-width: 600px){
+.member-form{
+  margin-left: 0% !important;
+}
 }
 </style>
 <?php
@@ -211,7 +216,7 @@ if(!empty($hash))
     }
   </script>
   <body onload="submitPayuForm()">
-    <h2>PayU Form</h2>
+    <!-- <h2>PayU Form</h2> -->
     <br/>
     <?php if($formError) { ?>
 	
@@ -221,7 +226,7 @@ if(!empty($hash))
     <?php } ?>
    
     <section class="x-services ptb-100 gray-bg">
-<div class="container" style="margin-left: 25%;">
+<div class="container member-form" style="margin-left: 25%;">
   <div id="main">
     <form  id="payuForm" method="POST"  action="<?php echo $action; ?>" >
     <div class="col-md-8 well" id="rightPanel">

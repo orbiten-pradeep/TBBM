@@ -63,8 +63,8 @@ and (max-width: 1366px){
     margin-left: 50px;
 }
 .x-services .thumbnail {
-    width: 80%;
-    height: 315px !important;
+    width: 100% !important;
+   /* height: 315px !important;*/
 }
 }
 .x-services .thumbnail {

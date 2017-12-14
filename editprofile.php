@@ -5,6 +5,17 @@ $user = include("class/getuser.php");
 include("html/header.html");
 //include_once 'class/auth.php';
 ?>
+
+<?php
+
+if((empty($user['profile'])) && (isset($user['Membership']) || (empty($user['Membership']))))
+{
+
+  $user['profile'] = "profile.png";
+
+}
+
+?>
 <style type="text/css">
 .navbar-default{
   background-color: #3CAFC4;
@@ -140,11 +151,11 @@ input[type='number'] {
    margin-top: -19px;
     /* z-index: 1000; */
     /*text-align: center;*/
-   margin-left: 36px;
+   margin-left: 25px;
 }
 
 .label.label-default.rank-label {
-    background-color: rgb(60, 175, 196);
+    background-color: rgb(81, 210, 183);
     padding: 5px 10px 5px 10px;
     border-radius: 27px;
 }
@@ -156,6 +167,43 @@ input[type='number'] {
   width: 25% !important;
 }
 }*/
+
+#profile-img{
+      background-image:url("http://localhost/TBBM.git/trunk/UploadImage/<?php echo $user['profile'];?>");
+       background-size:cover;
+       background-position: center;
+       height: 120px; width: 120px;
+       border: 1px solid #bbb;
+       border-radius: 50%;
+  
+}
+
+.uploadWrapper {
+    overflow: hidden;
+    position: relative;
+    height: 25px;
+    width: 70px;
+     background-color: #3CAFC4;
+    padding: 1px 0px 0px 15px;
+    border-radius: 27px;
+    cursor: pointer;
+}
+.uploadWrapper input {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.uploadWrapper p {
+   /* margin: 0 10px;
+    position: absolute;
+    line-height: 25px;*/
+    color: white;
+}
 </style>
 <section class="x-services ptb-100 gray-bg">
   <div class="container">
@@ -172,36 +220,47 @@ input[type='number'] {
                  ?>
                 <form role="form" enctype="multipart/form-data" action="class/profile.php" method="POST">
                       <div class="row">
-                 <!-- <div class="col-md-4 pull-left" style="margin-bottom: 10px;">
-                    <?php if($user['profile'] != ""): ?>
-                         <img style="cursor: pointer;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail profile-img">
-                          <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
-                    <?php else: ?>
-                    <img style="cursor: pointer;" src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail profile-img">
-                <?php endif; ?>
-               
-                <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/> 
-                </div> -->
+                 
                 <div class="profile-header-container col-md-4">   
                   <div class="profile-header-img">
                   <?php if($user['profile'] != ""): ?>
-                          <img class="img-circle profile-img" id="profile-img" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image"/>
-                          <!-- <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a> -->
+                    <div id='profile-img'>
+                    </div>
+                    <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
+                        <div class="rank-label-container">
+                          <div class="uploadWrapper">
+                        <input display type='file' id='getval' name="image"  onchange="readURL(event)" />
+                          <p>Upload</p>
+                      </div>
+                  <!-- <input display type='file' id='getval' name="image"  onchange="readURL(event)" /> -->
+                  
+                 <!--  <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/>
+                    <span style="cursor: pointer;" class="label label-default rank-label profile-img">Upload</span> -->
+                </div>
+                          <!-- <img class="img-circle profile-img" id="profile-img" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image"/> -->
+                          
                           <?php else: ?>
-                        <img src="img/profile.png" alt="Profile-image" class="img-circle profile-img">
+                            <div id='profile-img'></div>
+
+                            
+                        <!-- <img src="img/profile.png" alt="Profile-image" class="img-circle profile-img"> -->
                         <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
+                        <div class="rank-label-container">
+
+                  <input display type='file' id='getval' name="image"  onchange="readURL(event)" />
+                  
+                 <!--  <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/>
+                    <span style="cursor: pointer;" class="label label-default rank-label profile-img">Upload</span> -->
+                </div>
                   <?php endif; ?>
                 <!-- badge -->
-                <div class="rank-label-container">
-                  <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/>
-                    <span style="cursor: pointer;" class="label label-default rank-label profile-img">Upload</span>
-                </div>
+                
             </div>
         </div>
                 <div class="col-md-8">
                   <h2><?php echo $user['FirstName']; ?> <?php echo $user['LastName']; ?></h2>
-                  <span>(Memebership id: <?php echo $user['Membership']; ?>)</span>
-                  <?php if($user['profile'] != ""): ?>
+                  <span><h6>(Memebership id: <?php echo $user['Membership']; ?>)</h6></span><br>
+	<?php if($user['profile'] != ""): ?>
                   <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
                    <?php endif; ?>
                   <input type="submit" value="Save"  name="memberupdate" class="btn btn-primary pull-right save-btn"/>
@@ -235,10 +294,9 @@ input[type='number'] {
                         <div class="form-group">
                           <label>Group</label>
                                 <select style=""  class="form-control" id="groupname" name="groupname" value ="<?php echo $user['groupname']; ?>" required >
-                                  <option value="">Select Group</option>
-                                  <option name="groupname" value="Bangalore">Big Beach runners - Bangalore</option>
-                                  <option name="groupname" value="Chennai">Big Beach runners - Chennai</option>
-                                  <option name="groupname" value="Pune">Big Beach runners - Pune</option>
+                                  <option value="groupname"<?=$user['groupname'] == 'Bangalore' ? ' selected="selected"' : '';?>>Big Beach runners - Bangalore</option>
+                                  <option value="groupname"<?=$user['groupname'] == 'Chennai' ? ' selected="selected"' : '';?>>Big Beach runners - Chennai</option>
+                                  <option value="groupname"<?=$user['groupname'] == 'Mumbai' ? ' selected="selected"' : '';?>>Big Beach runners - Mumbai</option>
                                 </select>
                         </div>
                       </div>
@@ -248,9 +306,8 @@ input[type='number'] {
                       <div class="form-group">
                         <label for="">Sex</label>
                           <select style="" class="form-control" id="Gender" name="Gender" value ="<?php echo $user['Gender']; ?>" required>
-                            <option  value="">Select Gender</option>
-                            <option name="Gender" value="Male">Male</option>
-                            <option  name="Gender" value="Female">Female</option>
+                            <option value="Male"<?=$user['Gender'] == 'Male' ? ' selected="selected"' : '';?>>Male</option>
+                            <option value="Female"<?=$user['Gender'] == 'Female' ? ' selected="selected"' : '';?>>Female</option>
                           </select>
                       </div>
                   </div>
@@ -258,15 +315,14 @@ input[type='number'] {
                   <div class="form-group">
                     <label for="">Blood Group</label>
                       <select style="" class="form-control" id="blood" name="blood" value ="<?php echo $user['blood']; ?>" required >
-                        <option  value="">Select Blood Group</option>
-                        <option  name="blood" value="A+">A+</option>
-                        <option  name="blood" value="A-">A-</option>
-                        <option  name="blood" value="B+">B+</option>
-                        <option  name="blood" value="B-">B-</option>
-                        <option  name="blood" value="O+">O+</option>
-                        <option  name="blood" value="O-">O-</option>
-                        <option  name="blood" value="AB+">AB+</option>
-                        <option  name="blood" value="AB-">AB-</option>
+                         <option value="A+"<?=$user['blood'] == 'A+' ? ' selected="selected"' : '';?>>A+</option>
+                        <option value="A-"<?=$user['blood'] == 'A-' ? ' selected="selected"' : '';?>>A-</option>
+                        <option value="B+"<?=$user['blood'] == 'B+' ? ' selected="selected"' : '';?>>B+</option>
+                        <option value="B-"<?=$user['blood'] == 'B-' ? ' selected="selected"' : '';?>>B-</option>
+                        <option value="O+"<?=$user['blood'] == 'O+' ? ' selected="selected"' : '';?>>O+</option>
+                        <option value="O-"<?=$user['blood'] == 'O-' ? ' selected="selected"' : '';?>>O-</option>
+                        <option value="AB+"<?=$user['blood'] == 'AB+' ? ' selected="selected"' : '';?>>AB+</option>
+                        <option value="AB-"<?=$user['blood'] == 'AB-' ? ' selected="selected"' : '';?>>AB-</option>
                       </select>
                   </div>
                 </div>
@@ -336,38 +392,44 @@ input[type='number'] {
                 
                 <form role="form" enctype="multipart/form-data" action="class/profile.php" method="POST">
                 <div class="row">
-                 <!-- <div class="col-md-4 pull-left img" style="margin-bottom: 10px;">
-                    <?php if($user['profile'] != ""): ?>
-                         <img style="cursor: pointer;" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail profile-img"> <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
-                    <?php else: ?>
-                    <img style="cursor: pointer;" src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail profile-img"> 
-                <?php endif; ?>
-                <div class="col-md-10 upload">
-                            <p style="text-align: center; color: white;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 5px;"></i>Change</p>
-                         </div>
-                <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
-               
-                <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/> 
-                </div> -->
+                
                 <div class="profile-header-container col-md-4">   
                   <div class="profile-header-img">
                   <?php if($user['profile'] != ""): ?>
-                          <img class="img-circle profile-img" id="profile-img" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image"/>
-                          <!-- <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a> -->
+                    <div id='profile-img'>
+                    </div>
+                    <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
+                        <div class="rank-label-container">
+                        <div class="uploadWrapper">
+                        <input display type='file' id='getval' name="image"  onchange="readURL(event)" />
+                          <p>Upload</p>
+                      </div>
+                 <!--  <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/>
+                    <span style="cursor: pointer;" class="label label-default rank-label profile-img">Upload</span> -->
+                </div>
+                          <!-- <img class="img-circle profile-img" id="profile-img" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image"/> -->
+                          
                           <?php else: ?>
-                        <img src="img/profile.png" alt="Profile-image" class="img-circle profile-img">
+                            <div id='profile-img'></div>
+
+                            
+                        <!-- <img src="img/profile.png" alt="Profile-image" class="img-circle profile-img"> -->
                         <a href="class/profile.php?ID=<?php echo $row["ID"]; ?>" class="link" onClick="return confirm('Are You Sure ?');"></a>
+                        <div class="rank-label-container">
+
+                  <input display type='file' id='getval' name="image"  onchange="readURL(event)" />
+                  
+                 <!--  <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/>
+                    <span style="cursor: pointer;" class="label label-default rank-label profile-img">Upload</span> -->
+                </div>
                   <?php endif; ?>
                 <!-- badge -->
-                <div class="rank-label-container">
-                  <input style="display: none;" id="upload-btn" type="file"  class="field-long" name="image"/>
-                    <span style="cursor: pointer;" class="label label-default rank-label profile-img">Upload</span>
-                </div>
+                
             </div>
         </div>
                 <div class="col-md-8">
                   <h2><?php echo $user['FirstName']; ?> <?php echo $user['LastName']; ?></h2>
-                  <span>(Memebership id: Not Yet a Member)</span><br>
+                  <span><h6>(Memebership id: Not Yet a Member)</h6></span><br>
                   <?php if($user['profile'] != ""): ?>
                   <a onClick="return confirm('Are You Sure ?');" title="Delete" href="class/profile.php?deleteid=<?=$user['ID']?>">Remove Pic</a>
                    <?php endif; ?>
@@ -567,29 +629,7 @@ input[type='number'] {
 				
 				<input type="hidden" name="role_update" id="email" class="form-control input-lg" value ="User" readonly= "true">
             </div>
-            <!-- <div class="row">
-                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <label for="sel1">Sex</label>
-                            <select class="form-control" id="sel1">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-                    </div>
-                </div>
-            </div> -->
+   
             <hr class="">
             <div class="row">
                 <div class="col-xs-12 col-md-6 ">
@@ -673,6 +713,16 @@ include("html/footer.html")
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
-  $('.profile-img').click(function(){ $('#upload-btn').trigger('click'); });
+  // $('.profile-img').click(function()
+  //   { $('#upload-btn').trigger('click');
+    
+  // });
+  
+    function readURL(event){
+     var getImagePath = URL.createObjectURL(event.target.files[0]);
+     $('#profile-img').css('background-image', 'url(' + getImagePath + ')');
+    }
+
+
 </script>
 

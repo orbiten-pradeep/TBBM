@@ -43,6 +43,16 @@ color: #313131 !important;
     padding: 10px 0;
     border-bottom: none;
 }
+.mob-login{
+  display: block !important;
+}
+.desk-login{
+  display: none;
+}
+}
+.mob-login{
+  display: none;
+}
 }
 </style>
 
@@ -65,9 +75,36 @@ color: #313131 !important;
           </div>
           <div class="">
               <div class="row">
+                <div class="col-xs-12 col-sm-6 mob-login">
+                    <h2 style="font-size: 19px;">Already a member? Have you been out of touch with us for a bit?</h2>
+                    <p style="font-size: 15px;"> Or do you just want to log in on a new device? Either way here’s how you get back in touch with us!</p>
+                      <div class="well login-form-padding">
+                          <form  method="post" action="class/login.php" id="login-form">
+                              <!-- <?php
+                                if (isset($_SESSION['login_error'])) {
+                                 echo $_SESSION['login_error'];
+                                }
+                              ?> -->
+                              <h2>Login</h2>
+                              <div class="form-group">
+                                  <label for="username" class="control-label" style="display: none;">Email</label>
+                                  <input type="text" class="form-control" id="username" name="email" placeholder="Enter your email address" required>
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label" style="display: none;">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                              <button type="submit" name="btn-login" id="btn-login" class="btn btn-success btn-block">Login</button>
+                              <a href="forgotpass.php" style="float: right;margin-top: 10px;">Forgot Password?</a>
+                          </form>
+                      </div>
+                  </div>
                   <div class="col-xs-12 col-sm-6">
                     <h2 style="font-size: 19px;">Want to join us and get your fitness on track?</h2>
-                    <p style="font-size: 15px;"> Our simple sign up process gets you connected with us in a few easy steps. So, what are you waiting for? Go ahead and  joinus!</p>
+                    <p style="font-size: 15px;"> Our simple sign up process gets you connected with us in a few easy steps.<br><span style="color: #313131;font-weight: 400;">So, what are you waiting for?</span> Go ahead and  joinus!</p>
                       <div class="well">
                       <form id="loginForm" method="POST" action="class/signup.php">
                              <!--  <?php
@@ -108,7 +145,7 @@ color: #313131 !important;
                           
                       </div>
                   </div>
-                  <div class="col-xs-12 col-sm-6">
+                  <div class="col-xs-12 col-sm-6 desk-login">
                     <h2 style="font-size: 19px;">Already a member? Have you been out of touch with us for a bit?</h2>
                     <p style="font-size: 15px;"> Or do you just want to log in on a new device? Either way here’s how you get back in touch with us!</p>
                       <div class="well login-form-padding">

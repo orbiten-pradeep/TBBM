@@ -1,5 +1,5 @@
-<?php
-// session_start();
+﻿<?php
+ // session_start();
 include("class/auth.php");
 $user = include("class/getuser.php");
 include("html/header.html");
@@ -159,55 +159,69 @@ input[type='number'] {
     padding: 5px 10px 5px 10px;
     border-radius: 27px;
 }
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    background-color: #31aae2;
+    color: white;
+}
+.button {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 14px;
+  font-color: white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.navbar-default {
+    background-color: #3CAFC4 !important;
+}
+.mob-ticket{
+    display: none;
+  }
+@media (max-width: 600px){
+  .mob-ticket{
+    display: block;
+  }
+  .desk-ticket{
+ display: none; 
+}
+}
 </style>
 
-
-<!-- <div id="x-corp-carousel" class="carousel slide hero-slide hidden-xs" data-ride="carousel"> -->
-    <!-- Indicators -->
-<!--     <ol class="carousel-indicators">
-        <li data-target="#x-corp-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#x-corp-carousel" data-slide-to="1"></li>
-        <li data-target="#x-corp-carousel" data-slide-to="2"></li>
-    </ol>
- -->
-    <!-- Wrapper for slides -->
- <!--    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="img/hero-slide-1.jpg" alt="Hero Slide">
-            <div class="carousel-caption">
-                <h1>It′s simple, smart and occasionally magical.</h1>
-                <p>Intrinsicly negotiate corporate synergy rather than user-centric web services. Synergistically
-                    transition emerging schemas and.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="img/hero-slide-2.jpg" alt="...">
-            <div class="carousel-caption">
-                <h1>It′s profitable and successful!</h1>
-                <p>Synergistically enhance low-risk high-yield testing procedures with clicks-and-mortar architectures.
-                    Compellingly revolutionize future-proof interfaces and.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="img/hero-slide-3.jpg" alt="...">
-            <div class="carousel-caption">
-                <h1>Good solutions for your business!</h1>
-                <p>Monotonectally envisioneer 24/7 bandwidth with reliable imperatives. Continually unleash unique
-                    niches after go forward.</p>
-            </div>
-        </div>
-    </div>
- -->
-    <!-- Controls -->
-<!--     <a class="left carousel-control" href="#x-corp-carousel" role="button" data-slide="prev">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#x-corp-carousel" role="button" data-slide="next">
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
-        <span class="sr-only">Next</span>
-    </a>
-</div> -->
 
 <!-- #x-corp-carousel-->
 <section class="x-services ptb-100 gray-bg">
@@ -239,10 +253,15 @@ input[type='number'] {
                    My Profile
                   </a>
                   </li>
-
                   <li><a href="#chngpswd" data-toggle="tab" title="password">
                      <span class="round-tabs two">
                        Change Password
+                     </span> 
+                    </a>
+                 </li>
+                  <li><a href="#ticket" data-toggle="tab" title="tichistory">
+                     <span class="round-tabs two">
+                      Ticket History
                      </span> 
                     </a>
                  </li>
@@ -251,15 +270,9 @@ input[type='number'] {
                 <div class="tab-content" style="margin-top: 20px;">
                  <div class="tab-pane fade in active" id="profile">
                 <div class="col-md-12">
-                    <!-- <h2>View profile</h2>
-                    <hr class=""> -->
+                   
                     <div class="row">
-                    <!-- <div class="col-md-2 pull-left" style="margin-bottom: 10px;"><?php if($user['profile'] != ""): ?>
-                      <img id="profile-img" src="UploadImage/<?=$user['profile'];?>" alt="Profile-image" class="img-circle img-thumbnail">
-                        <?php else: ?>
-                        <img src="img/profile.png" alt="Profile-image" class="img-circle img-thumbnail">
-                        <?php endif; ?>
-                        </div> -->
+                    
                          <div class="profile-header-container col-md-2">   
         <div class="profile-header-img">
         <?php if($user['profile'] != ""): ?>
@@ -267,10 +280,7 @@ input[type='number'] {
                 <?php else: ?>
                         <img src="img/profile.png" alt="Profile-image" class="img-circle">
                   <?php endif; ?>
-                <!-- badge -->
-                <!-- <div class="rank-label-container">
-                    <span class="label label-default rank-label">100 puntos</span>
-                </div> -->
+                
             </div>
         </div> 
                         <div class="col-md-6" style="margin-top: 50px;">
@@ -287,8 +297,7 @@ input[type='number'] {
                 </div>
                
      
-        <!-- </div> -->
-         <!--  <div class="col-md-9 well" id="rightPanel"> -->
+        
 
             <div class="container">
             <div class="row">
@@ -317,14 +326,7 @@ input[type='number'] {
                         </div>
                     </div>
                     <div class="row">
-                     <!--  <div class="col-xs-12 col-sm-6 col-md-6">
-                         <div class="form-group" >
-                            <label>Email</label>
-                              <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" tabindex="3" value ="<?php echo $user['email']; ?>" readonly= "true" style="cursor: not-allowed;">
-                        
-                              <input type="hidden" name="memberupdate" id="email" class="form-control input-lg" value ="User" readonly= "true">
-                          </div>
-                      </div> -->
+                     
                       <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
                           <label>Group</label>
@@ -409,14 +411,7 @@ input[type='number'] {
                         </div>
                     </div>
                     <div class="row">
-                     <!--  <div class="col-xs-12 col-sm-6 col-md-6">
-                         <div class="form-group" >
-                            <label>Email</label>
-                              <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" tabindex="3" value ="<?php echo $user['email']; ?>" readonly= "true" style="cursor: not-allowed;">
-                        
-                              <input type="hidden" name="memberupdate" id="email" class="form-control input-lg" value ="User" readonly= "true">
-                          </div>
-                      </div> -->
+                    
                       <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
                           <label>Group</label>
@@ -447,13 +442,13 @@ input[type='number'] {
               <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group">
                  <label>Contact Number</label>
-                  <input style="cursor: not-allowed;" type="number" name="contact_number" id="contact_number" value ="<?php echo $user['ContactNumber']; ?>" class="form-control input-lg" placeholder="Enter Your Contact Number" tabindex="4" required>
+                  <input style="cursor: not-allowed;" type="number" name="contact_number" id="contact_number" value ="<?php echo $user['ContactNumber']; ?>" class="form-control input-lg" placeholder="Enter Your Contact Number" tabindex="4" required  readonly="true">
                 </div>
               </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
               <div class="form-group">
                <label>Date Of Birth</label>
-                <input style="cursor: not-allowed;" type="date" name="date_of_birth" id="date" value ="<?php echo $user['DOB']; ?>" class="form-control input-lg" placeholder="Enter Your Date Of Birth" tabindex="5" required>
+                <input style="cursor: not-allowed;" type="date" name="date_of_birth" id="date" value ="<?php echo $user['DOB']; ?>" class="form-control input-lg" placeholder="Enter Your Date Of Birth" tabindex="5" required  readonly="true">
               </div>
             </div>
           </div>
@@ -461,13 +456,13 @@ input[type='number'] {
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
              <label>Height(in CM)</label>
-              <input style="cursor: not-allowed;" type="number" name="Height" id="Height" class="form-control input-lg" value ="<?php echo $user['Height']; ?>"  placeholder="Enter Your Height" tabindex="6">
+              <input style="cursor: not-allowed;" type="number" name="Height" id="Height" class="form-control input-lg" value ="<?php echo $user['Height']; ?>"  placeholder="Enter Your Height" tabindex="6"  readonly="true">
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
              <label>Weight(in KG)</label>
-              <input style="cursor: not-allowed;" type="number" name="Weight" id="Weight" class="form-control input-lg" value ="<?php echo $user['Weight']; ?>" placeholder="Enter Your Weight" tabindex="7">
+              <input style="cursor: not-allowed;" type="number" name="Weight" id="Weight" class="form-control input-lg" value ="<?php echo $user['Weight']; ?>" placeholder="Enter Your Weight" tabindex="7"  readonly="true">
             </div>
           </div>
         </div>
@@ -523,6 +518,8 @@ input[type='number'] {
               <div id="validation-message">
               </div>
         <div class="form-group user-name">
+      
+        <input type="hidden" name="email" id="email" class="form-control input-lg" value ="<?php echo $_SESSION['email'];?>" readonly= "true">
           <input name="password" type="password" class="form-control" placeholder="Enter New Passwword.." required>
         </div>
  <div class="form-group user-name">
@@ -534,11 +531,87 @@ input[type='number'] {
  
       </form>
             </div>
+
+ <div class="tab-pane fade" id="ticket">
+    
+    <?php 
+    require_once"class/dbconnect.php";
+    $sql = "SELECT transactions_id, fullname, tshirt, KM, Bibno, gender, Status FROM tickets WHERE email='$email'";
+    $result = $DBcon->query($sql);
+    if(!$result->num_rows > 0)
+    {
+      ?>
+
+      <div class="row">
+                        <div class="col-xs-12 col-md-12 text-center">
+                        <h4>Take part in our wide variety of events</h4>
+                        <a href="events.php" class="btn btn-lg btn-primary">View Events</a>   
+                    </div>
+                    <?php 
+    }
+    else{
+
+    ?>
+    <div class="table-responsive desk-ticket">
+      <table id="customers" class="table table-bordered">
+        <thead >
+          <tr><b>
+            <!-- <th><center>Event</th> -->
+            <th><center>Name</th>
+            <th><center>Gender</th>
+            <th><center>T-Shirt Size</th>
+            <th><center>KM</th>
+            <th><center>Bib-No</th>
+            <th><center>Status</th>
+            <th>Actions</th></b>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><?php
+          require_once"class/dbconnect.php";
+      $query = $DBcon->query("SELECT transactions_id, fullname, tshirt, KM, Bibno, gender, Status FROM tickets WHERE email='$email'");
+      while ($data =$query->fetch_array(MYSQLI_ASSOC)) {
+?>
+            <td><?php  echo $data['fullname']; ?></td>
+            <td><?php  echo $data['gender']; ?></td>
+            <td><?php  echo $data['tshirt']; ?></td>
+            <td><?php  echo $data['KM']; ?></td>
+            <td><?php  echo $data['Bibno']; ?></td>
+            <td><span class="label label-info"><?php  echo $data['Status']; ?></span></td>
+            <td> <a href="pdf/actionpdf.php?transactions_id=<?php echo $data["transactions_id"]; ?>">
+            <button class="btn btn-primary">Download</button></a></td>
+          </tr><?php } ?>
+        </tbody>
+      </table>
+    </div>
+    <div class="mob-ticket">
+    <?php
+          require_once"class/dbconnect.php";
+      $query = $DBcon->query("SELECT transactions_id, fullname, tshirt, KM, Bibno, gender, Status FROM tickets WHERE email='$email'");
+      while ($data =$query->fetch_array(MYSQLI_ASSOC)) {
+?>
+      <table style="width: 100%;border-bottom: 1px solid #ddd;">
+        <tr><th>Name:</th><td><?php  echo $data['fullname']; ?></td></tr>
+        <tr><th>Gender:</th><td><?php  echo $data['gender']; ?></td></tr>
+        <tr><th>T-Shirt Size:</th><td><?php  echo $data['tshirt']; ?></td></tr>
+        <tr><th>KM:</th><td><?php  echo $data['KM']; ?></td></tr>
+        <tr><th>Bib-No:</th><td><?php  echo $data['Bibno']; ?></td></tr>
+        <tr><th>Status:</th><td><?php  echo $data['Status']; ?></td></tr>
+        <tr><th></th><td><a href="pdf/actionpdf.php?transactions_id=<?php echo $data["transactions_id"]; ?>">Download</a></td></tr>
+      </table>
+      <?php } ?>
+    </div>
+   <?php } ?>
+  </div>
+
+
+
             </div>
             </div>
             </div>
 
 
+            
         <div class="col-md-8 well" id="rightPanel" style="display: none;">
             <div class="row">
             <ul class="nav nav-tabs" id="myTab">
@@ -586,29 +659,7 @@ input[type='number'] {
                 
                 <input type="hidden" name="role_update" id="email" class="form-control input-lg" value ="User" readonly= "true">
             </div>
-            <!-- <div class="row">
-                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <label for="sel1">Sex</label>
-                            <select class="form-control" id="sel1">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-                    </div>
-                </div>
-            </div> -->
+           
             <hr class="">
             <div class="row">
                 <div class="col-xs-12 col-md-6 ">
